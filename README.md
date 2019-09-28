@@ -1,2 +1,2 @@
 # CLRProject
-Colin RJ and Levi Project
+Colin Levi and RJ Project
