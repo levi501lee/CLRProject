@@ -1,38 +1,67 @@
+<!-- Movie Taste
+    Project 1 -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Basics</title>
 
-  <!-- Added link to the jQuery library -->
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+
+  <!--Reset CSS-->
+  <link rel="stylesheet" href="assets/css/reset.css">
+
+  <!--Media Query-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- all CSS properties here <https://developer.mozilla.org/en-US/docs/Web/CSS/Reference> -->
-<!-- Link to Moment.js -->
-  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-  
+
+  <!-- Original CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <title>Taste in Movies</title>
 </head>
+
 <body>
 
-  <!-- Header with an id of click-me -->
-  <h3 id="click-me">CLICK ME!</h3>
+  <div class='container container-fluid col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Taste in Movies</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <script type="text/javascript">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto col-sm-9 col-md-9 col-lg-9 col-xl-9">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-    // This "document.ready" code isn't necessary in this example... but is useful to become familiar with.
-    // "document.ready" makes sure that our JavaScript doesn't get run until the HTML document is finished loading.
-    $(document).ready(function() {
-
-      // Here we use jQuery to select the header with "click-me" as its ID.
-      // Notice I have the #click-me, click, and then the function
-      // So $("#id|.class|element").on("action", function(){});
-      // And so whenever it is clicked...
-      $("#click-me").on("click", function() {
-        alert("I've been clicked!");
-      });
-
-    });
-
-</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="assets/javascript/app.js"></script>
 
 </body>
+
 </html>
