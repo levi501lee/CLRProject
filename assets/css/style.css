@@ -15,16 +15,20 @@ body {
     background-size: cover;
 }
 
-a {
+.nav-link {
     color: black;
 }
 
-.btn-first-row {
-    margin-top: 40%;
+.btn-row {
+    margin-top: 30%;
     text-align: center;
 }
 
-.btn-second-row {
-    margin-top: 5%;
-    text-align: center;
+#btn-start {
+    border: solid 10px #FC5185;
+    transition: border 0.6s linear;
+}
+
+#btn-start:hover {
+    border: 10px;
 }
