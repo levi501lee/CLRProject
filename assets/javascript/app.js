@@ -1,14 +1,14 @@
-$('#btn-start').mouseover( function() {
+$('#btn-start').mouseover(function () {
 
-    var name = "";
+  var name = "";
 
-    $(".btn-start").hover(function() {
-        name = $(this).attr("#btn-start");
-        $(this).stop().show().animate({ opacity: 1 });
-    }, function() {
-        name = $(this).attr("id");
-        $("#image-"+name).stop().animate({ opacity: 0 });
-    });
+  $(".btn-start").hover(function () {
+    name = $(this).attr("#btn-start");
+    $(this).stop().show().animate({ opacity: 1 });
+  }, function () {
+    name = $(this).attr("id");
+    $("#image-" + name).stop().animate({ opacity: 0 });
+  });
 
 });
 
@@ -25,21 +25,19 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
+btn.onclick = function () {
   modal.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.onclick = function () {
   modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
 }
-=======
-});
 
