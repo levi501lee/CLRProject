@@ -54,6 +54,32 @@ body {
   /* Could be more or less, depending on screen size */
 }
 
+#street {
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#city {
+  padding-left: 4px;
+  padding-right: 0px;
+}
+
+#state {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#zip {
+  padding-left: 0;
+  padding-right: 4px;
+}
+
+#movieType {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
 /* The Close Button */
 
 .close {
