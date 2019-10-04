@@ -29,25 +29,44 @@
 
 <body>
 
-  <div class='container container-fluid col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-    <nav class="navbar navbar-expand-lg transparent">
-      <a class="navbar-brand" href="#">Taste in Movies</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <!-- <div class='container container-fluid col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" id="navbar1">
+          <div class="container">
+              <a class="navbar-brand mr-1 mb-1 mt-0" href="../">Taste in Movies</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                          <a class="nav-link" href="#modals">info@tasteinmovies.com</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#forms">Forms</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>  -->
+  <nav class="navbar navbar-expand-lg transparent">
+    <a class="navbar-brand" href="#">Taste in Movies</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto col-sm-9 col-md-9 col-lg-9 col-xl-9">
-          <li class="nav-item">
-            <a class="nav-link" href="#">info@tasteinmovies.com</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">1(801)555-5555</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <li class="nav-item">
+          <a class="nav-link" href="#">info@tasteinmovies.com</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">1(801)555-5555</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <main>
 
     <!-- Trigger/Open The Modal -->
     <button id="myBtn">Open Modal</button>
@@ -55,28 +74,61 @@
     <div id="myModal" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
-        <span class="close">&times;</span>
-        <input class="form-control" type="text" placeholder="Enter ZIP...">
-        <div class="input-group">
-          <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-            <option selected>Choose...</option>
-            <option value="1">Action</option>
-            <option value="2">Comedy</option>
-            <option value="3">Romance</option>
-            <option value="4">Musical</option>
-            <option value="5">Rom-Com</option>
-            <option value="6">Horror</option>
-            <option value="7">Drama</option>
-            <option value="8">Documentary</option>
-            <option value="9">Animation</option>
-          </select>
-          <div class="input-group-append">
-            <button id="btn-submit" class="btn btn-outline-secondary" type="button">Submit</button>
-          </div>
-        </div>
-      </div>
-    </div>
+          <span class="close">&times;</span>
+          <section id="forms" class="container pb-10">
+              <div class="row">
+                <form role="form">
+                    <div class="form-group row">
+                        <div class="col-sm-12" id="street">
+                          <input class="form-control" type="text" placeholder="Street">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6" id="city">
+                            <input class="form-control" type="text" placeholder="City">
+                        </div>
+                        <div class="col-sm-2" id="state">
+                            <select class="form-control">
+                                <option>St</option>
+                                <option>AK</option>
+                                <option>AZ</option>
+                                <option>CA</option>
+                                <option>CO</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4" id="zip">
+                            <input class="form-control" type="number" placeholder="Zip">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="input-group" id="movieType">
+                            <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                              <option selected>Choose Movie Genre..</option>
+                              <option value="1">Action</option>
+                              <option value="2">Comedy</option>
+                              <option value="3">Romance</option>
+                              <option value="4">Musical</option>
+                              <option value="5">Rom-Com</option>
+                              <option value="6">Horror</option>
+                              <option value="7">Drama</option>
+                              <option value="8">Documentary</option>
+                              <option value="9">Animation</option>
+                            </select>
+                          </div>
+                    </div>
+                    <div class="form-group row">
 
+                        <div class="col-lg-1">
+                            <input type="reset" class="btn btn-outline-secondary mr-2" value="Cancel">
+                            <input type="button" class="btn btn-primary mr-2" value="Submit">
+                        </div>
+                    </div>
+                </form>
+              </div>
+            </section>
+        </div>
+    </div>
+  </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
       crossorigin="anonymous"></script>
@@ -85,7 +137,7 @@
       crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
-
+  
 </body>
 
 </html>
