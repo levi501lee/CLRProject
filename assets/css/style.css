@@ -49,6 +49,44 @@ body {
 }
 
 .close {
+  padding-bottom: 4px;
+}
+
+#street {
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#city {
+  padding-left: 4px;
+  padding-right: 0px;
+}
+
+#state {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#zip {
+  padding-left: 0;
+  padding-right: 4px;
+}
+
+#movieType {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#modalButtons {
+  justify-content: center;
+  align-items: center;
+}
+
+/* The Close Button */
+
+
+.close {
   color: #aaa;
   float: right;
   font-size: 28px;
