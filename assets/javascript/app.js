@@ -18,81 +18,51 @@ $('#btn-start').mouseover(function () {
 
 
 
-/*RJ js for the modal*/
-// Get the modal
-var modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function () {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-/*RJ js for the modal*/
+/*js for the modal 1*/
 // Get the modal
 var modal1 = document.getElementById("getLaidForm");
-
-// Get the button that opens the modal
 var btn1 = document.getElementById("getLaid");
-
-// Get the <span> element that closes the modal
 var span1 = document.getElementsByClassName("close1")[0];
-
-// When the user clicks on the button, open the modal
 btn1.onclick = function () {
   modal1.style.display = "block";
 }
-
-// When the user clicks on <span> (x), close the modal
 span1.onclick = function () {
   modal1.style.display = "none";
 }
-
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal1) {
     modal1.style.display = "none";
   }
 }
-/*RJ js for the modal*/
-// Get the modal
+/*js for the modal 2*/
 var modal2 = document.getElementById("worstDateForm");
-
-// Get the button that opens the modal
 var btn2 = document.getElementById("worstDate");
-
-// Get the <span> element that closes the modal
 var span2 = document.getElementsByClassName("close2")[0];
-
-// When the user clicks on the button, open the modal
 btn2.onclick = function () {
   modal2.style.display = "block";
 }
-
-// When the user clicks on <span> (x), close the modal
 span2.onclick = function () {
   modal2.style.display = "none";
 }
-
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
-  if (event.target == modal1) {
+  if (event.target == modal2) {
     modal2.style.display = "none";
+  }
+}
+
+/*js for the modal 3 Levi's*/
+var modal3 = document.getElementById("leviForm");
+var btn3 = document.getElementById("leviBtn");
+var span3 = document.getElementsByClassName("close3")[0];
+btn3.onclick = function () {
+  modal3.style.display = "block";
+}
+span3.onclick = function () {
+  modal3.style.display = "none";
+}
+window.onclick = function (event) {
+  if (event.target == modal3) {
+    modal3.style.display = "none";
   }
 }
