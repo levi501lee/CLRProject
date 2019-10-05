@@ -17,10 +17,17 @@ firebase.initializeApp(firebaseConfig);
 
 //Initialize database
 let database = firebase.database();
-console.log(database);
+
+//Get a reference from the first modal form
+const getLaidForm = document.querySelector('#getLaidForm');
+
 $('#getLaid').on('click', function () {
 
-
+    let street = $('#street').val().trim();
+    let city = $('#city').val().trim();
+    let state = $('#state').val().trim();
+    let zip = $('#zip').val().trim();
+    let movieType = $('#movieType').val().trim();
 });
 
 $('#worstDate').on('click', function () {
