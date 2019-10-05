@@ -2,6 +2,7 @@
 // Authorization and modal functionality javascript for Taste in Movies
 // backend.js
 
+//////////////////////////FRONT-END FUNCTIONALITY/////////////////////////////////////
 $('#btn-start').mouseover(function () {
 
   var name = "";
@@ -16,6 +17,8 @@ $('#btn-start').mouseover(function () {
 
 });
 
+/////////////////////////////FIREBASE///////////////////////////////////////////////////////
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyD-2KTAIkrBfmuFq30tQ0OnpbrMRbCebYs",
@@ -29,8 +32,68 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+// Initialize values
+let street = "";
+let city = "";
+let state = "";
+let zip = "";
+let genre = "";
+let movieTitle = "";
+let metadata = "";
+let isGetLaid = false;
+let isWorstDate = false;
+let isFoodToo = false;
+
 //Initialize database
 let database = firebase.database();
+
+// Fires on value-change
+database.ref().on("value", function (snapshot) {
+
+  // If Firebase has existing data stored (first case)
+  if (snapshot.child("street").exists() && snapshot.child("city").exists() && snapshot.child("state").exists() && snapshot.child("zip").exists() && snapshot.child("genre").exists() || snapshot.child("movieTitle").exists() && snapshot.child("metadata").exists()) {
+
+    street = snapshot.val().street;
+    city = snapshot.val().city;
+    state = snapshot.val().state;
+    zip = snapshot.val().zip;
+    genre = snapshot.val().genre;
+    movieTitle = snapshot.val().movieTitle;
+    metadata = snapshot.val().metadata;
+    isGetLaid = snapshot.val().isGetLaid;
+    isWorstDate = snapshot.val().isWorstDate;
+    isFoodToo = snapshot.val().isFoodToo;
+
+    // Change the HTML to reflect the stored values
+    $('#street').text(street);
+    $('#city').text(city);
+    $('#state').text(state);
+    $('#zip').text(zip);
+    $('#genre').text(street);
+    $('#movieTitle').text(movieTitle);
+    $('#metadata').text(metadata);
+    $('#isGetLaid').text(isGetLaid);
+    $('#isWorstDate').text(isWorstDate);
+    $('#isFoodToo').text(isFoodToo);
+
+    // Print the data to the console.
+    console.log(street);
+    console.log(city);
+    console.log(state);
+    console.log(zip);
+    console.log(street);
+    console.log(movieTitle);
+    console.log(metadata);
+    console.log(isGetLaid);
+    console.log(isWorstDate);
+    console.log(isFoodToo);
+  }
+  // If any errors are experienced, log them to console.
+}, function (errorObject) {
+  console.log("The read failed: " + errorObject.code);
+});
+
+/////////////////////////MODAL FUNCTIONALITY////////////////////////////////////////
 
 //Get a reference from the first modal form
 const getLaidForm = document.querySelector('#getLaidForm');
