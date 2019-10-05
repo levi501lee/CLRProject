@@ -56,7 +56,6 @@ $('#worstDate').on('click', function () {
 });
 
 
-<<<<<<< HEAD
 /*RJ js for the modal*/
 // Get the modal
 var modal1 = document.getElementById("getLaidForm");
@@ -84,10 +83,6 @@ window.onclick = function (event) {
   }
 }
 /*RJ js for the modal*/
-=======
-
-/*js for the modal 1*/
->>>>>>> master
 // Get the modal
 var modal1 = document.getElementById("getLaidForm");
 var btn1 = document.getElementById("getLaid");
