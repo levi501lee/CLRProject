@@ -1,3 +1,7 @@
+// CLR Project 1
+// Authorization and modal functionality javascript for Taste in Movies
+// backend.js
+
 $('#btn-start').mouseover(function () {
 
   var name = "";
