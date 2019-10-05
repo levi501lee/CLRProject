@@ -50,6 +50,7 @@ body {
 
 .close {
   padding-bottom: 4px;
+  float: right;
 }
 
 #street {
