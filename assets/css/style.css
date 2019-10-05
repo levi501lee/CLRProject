@@ -9,6 +9,12 @@
 }
 
 body {
+  -webkit-animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  -ms-animation: fadein 2s;
+  -o-animation: fadein 2s;
+  animation: fadein 2s;
+
   background-image: url('../images/so_happy-bg.png');
   height: 100%;
   background-repeat: no-repeat;
@@ -23,38 +29,62 @@ body {
 
 .modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: rgb(0, 0, 0);
-  /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
 }
-
-/* Modal Content/Box */
 
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto;
-  /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 30%;
-  /* Could be more or less, depending on screen size */
+}
+
+.close {
+  padding-bottom: 4px;
+}
+
+#street {
+  padding-top: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#city {
+  padding-left: 4px;
+  padding-right: 0px;
+}
+
+#state {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#zip {
+  padding-left: 0;
+  padding-right: 4px;
+}
+
+#movieType {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#modalButtons {
+  justify-content: center;
+  align-items: center;
 }
 
 /* The Close Button */
+
 
 .close {
   color: #aaa;
@@ -69,43 +99,58 @@ body {
   cursor: pointer;
 }
 
-#myBtn {
+#myBtn, .navbar {
   margin-top: 25px;
   font-size: 21px;
   text-align: center;
-
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-     -moz-animation: fadein 2s; /* Firefox < 16 */
-      -ms-animation: fadein 2s; /* Internet Explorer */
-       -o-animation: fadein 2s; /* Opera < 12.1 */
-          animation: fadein 2s;
+  -webkit-animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  -ms-animation: fadein 2s;
+  -o-animation: fadein 2s;
+  animation: fadein 2s;
 }
 
 @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-/* Firefox < 16 */
 @-moz-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-/* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-/* Internet Explorer */
 @-ms-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-/* Opera < 12.1 */
 @-o-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
