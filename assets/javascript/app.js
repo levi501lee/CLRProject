@@ -47,51 +47,51 @@ let isFoodToo = false;
 //Initialize database
 let database = firebase.database();
 
-// Fires on value-change
-database.ref().on("value", function (snapshot) {
+// // Fires on value-change
+// database.ref().on("value", function (snapshot) {
 
-  // If Firebase has existing data stored (first case)
-  if (snapshot.child("street").exists() && snapshot.child("city").exists() && snapshot.child("state").exists() && snapshot.child("zip").exists() && snapshot.child("genre").exists() || snapshot.child("movieTitle").exists() && snapshot.child("metadata").exists()) {
+//   // If Firebase has existing data stored (first case)
+//   if (snapshot.child("street").exists() && snapshot.child("city").exists() && snapshot.child("state").exists() && snapshot.child("zip").exists() && snapshot.child("genre").exists() || snapshot.child("movieTitle").exists() && snapshot.child("metadata").exists()) {
 
-    street = snapshot.val().street;
-    city = snapshot.val().city;
-    state = snapshot.val().state;
-    zip = snapshot.val().zip;
-    genre = snapshot.val().genre;
-    movieTitle = snapshot.val().movieTitle;
-    metadata = snapshot.val().metadata;
-    isGetLaid = snapshot.val().isGetLaid;
-    isWorstDate = snapshot.val().isWorstDate;
-    isFoodToo = snapshot.val().isFoodToo;
+//     street = snapshot.val().street;
+//     city = snapshot.val().city;
+//     state = snapshot.val().state;
+//     zip = snapshot.val().zip;
+//     genre = snapshot.val().genre;
+//     movieTitle = snapshot.val().movieTitle;
+//     metadata = snapshot.val().metadata;
+//     isGetLaid = snapshot.val().isGetLaid;
+//     isWorstDate = snapshot.val().isWorstDate;
+//     isFoodToo = snapshot.val().isFoodToo;
 
-    // Change the HTML to reflect the stored values
-    $('#street').text(street);
-    $('#city').text(city);
-    $('#state').text(state);
-    $('#zip').text(zip);
-    $('#genre').text(street);
-    $('#movieTitle').text(movieTitle);
-    $('#metadata').text(metadata);
-    $('#isGetLaid').text(isGetLaid);
-    $('#isWorstDate').text(isWorstDate);
-    $('#isFoodToo').text(isFoodToo);
+//     // Change the HTML to reflect the stored values
+//     $('#street').text(street);
+//     $('#city').text(city);
+//     $('#state').text(state);
+//     $('#zip').text(zip);
+//     $('#genre').text(street);
+//     $('#movieTitle').text(movieTitle);
+//     $('#metadata').text(metadata);
+//     $('#isGetLaid').text(isGetLaid);
+//     $('#isWorstDate').text(isWorstDate);
+//     $('#isFoodToo').text(isFoodToo);
 
-    // Print the data to the console.
-    console.log("street " + street);
-    console.log("city " + city);
-    console.log("state " + state);
-    console.log("zip " + zip);
-    console.log("genre " + genre);
-    console.log("movieTitle " + movieTitle);
-    console.log("metadata " + metadata);
-    console.log("isGetLaid " + isGetLaid);
-    console.log("isWorstDate " + isWorstDate);
-    console.log("isFoodToo " + isFoodToo);
-  }
-  // If any errors are experienced, log them to console.
-}, function (errorObject) {
-  console.log("The read failed: " + errorObject.code);
-});
+//     // Print the data to the console.
+//     // console.log("street " + street);
+//     // console.log("city " + city);
+//     // console.log("state " + state);
+//     // console.log("zip " + zip);
+//     // console.log("genre " + genre);
+//     // console.log("movieTitle " + movieTitle);
+//     // console.log("metadata " + metadata);
+//     // console.log("isGetLaid " + isGetLaid);
+//     // console.log("isWorstDate " + isWorstDate);
+//     // console.log("isFoodToo " + isFoodToo);
+//   }
+//   // If any errors are experienced, log them to console.
+// }, function (errorObject) {
+//   console.log("The read failed: " + errorObject.code);
+// });
 
 /////////////////////////MODAL FUNCTIONALITY////////////////////////////////////////
 
@@ -103,9 +103,9 @@ const worstDateForm = document.querySelector('#worstDateForm');
 const leviForm = document.querySelector('#leviForm');
 
 // Pass the user values when clicked
-$('#getLaid').on('click', function () { getUserValues(this); });
-$('#worstDate').on('click', function () { getUserValues(this); });
-$('#leviForm').on('click', function () {
+$('#getLaidSubmit').on('click', function () { getUserValues(this); });
+$('#worstDateSubmit').on('click', function () { getUserValues(this); });
+$('#leviFormSubmit').on('click', function () {
 //
 });
 
@@ -113,11 +113,11 @@ $('#leviForm').on('click', function () {
 function getUserValues(modal) {
   this.event.preventDefault();
   console.log("modal " + modal.id);
-  let street = $(modal).getElementById('#street').val().trim();
-  let city = $(modal).getElementById('#city').val().trim();
-  let state = $(modal).getElementById('#state').val().trim();
-  let zip = $(modal).getElementById('#zip').val().trim();
-  let movieType = $(modal).getElementById('#movieType').val().trim();
+  let street = $('modal.id').getElementById('#street').val().trim();
+  let city = $('modal.id').getElementById('#city').val().trim();
+  let state = $('modal.id').getElementById('#state').val().trim();
+  let zip = $('modal.id').getElementById('#zip').val().trim();
+  let movieType = $('modal.id').getElementById('#movieType').val().trim();
 
   console.log("street " + street);
   console.log("city " + city);
