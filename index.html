@@ -9,7 +9,7 @@
   <meta charset="utf-8">
 
   <!-- Flavicon -->
-  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="shortcut icon" sizes="32X32" href="favicon_heart.ico">
 
   <!--Reset CSS-->
   <link rel="stylesheet" href="assets/css/reset.css">
@@ -17,12 +17,20 @@
   <!--Media Query-->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <!-- Vendor Stylesheets -->
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700%7CRoboto:300,400,700" rel="stylesheet">
+  <link href="../assets/vendor/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+  <link href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/dist/aos.css" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Theme StyleSheets -->
+  <link href="assets/css/theme.css" rel="stylesheet">
 
   <!-- Original CSS -->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -35,26 +43,22 @@
 </head>
 
 <body>
+<!-- Header -->
+<header class="spyre-navbar navbar navbar-expand-lg bg-secondary navbar-dark fixed-top align-items-center" data-transparent data-text-color="#ffffff" id="navBar">
+    <div class="container">
+        <a class="navbar-brand mr-lg-5 mr-xl-7" href="../pages/index.html">
+            <img src="assets/images/TasteNMovies-01.svg" class="d-none d-lg-block" alt="Spyre" width="200" />
+            <img src="assets/images/TasteNMovies-01.svg" class="d-block d-lg-none" alt="Spyre" width="150" />
+        </a>
 
-  <!-- <div class='container container-fluid col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" id="navbar1">
-          <div class="container">
-              <a class="navbar-brand mr-1 mb-1 mt-0" href="../">Taste 'n Dates</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
-                  <ul class="navbar-nav ml-auto">
-                      <li class="nav-item">
-                          <a class="nav-link" href="#modals">info@tasteinmovies.com</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#forms">Forms</a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </nav>  -->
+        <span class="navbar-text flex-fill d-none d-md-inline-block text-white">
+            Contact us: <a href="#" class="pl-2 text-white">info@tasteInMovies.com</a><a href="#" class="pl-5 text-white">+1-800-GET-DATE</a>
+        </span>
+    </div>
+</header>
+<!-- End of Header -->
+
+<!-- <div class="container" id="nav-container">   
   <nav class="navbar navbar-expand-lg transparent">
     <a class="navbar-brand" href="#">Taste in Movies</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -73,6 +77,7 @@
       </ul>
     </div>
   </nav>
+</div>  -->
   <main>
     <!-- <section>
     Trigger/Open The Modal
@@ -195,7 +200,7 @@
                               <h4 class="card-title text-primary">Get Laid</h4>
                               <p class="card-text">Our Get Laid option will provide you and your date with a will matched movie and dinner option based on the likes of your date.</p>
                                 <!-- Modal Button in the first card -->
-                                <button class="btn btn-primary btn-get-laid mt-auto" id="getLaid">Feeling Lucky</button>
+                                <button class="btn btn-primary btn-sm btn-get-laid mt-auto" id="getLaid">Feeling Lucky</button>
                                 <!-- The Modal -->
                                 <div id="getLaidForm" class="modal">
                                   <!-- Modal content -->
@@ -214,8 +219,8 @@
                                                         <input class="form-control" type="text" placeholder="City">
                                                     </div>
                                                     <div class="col-sm-3" id="state">
-                                                        <select class="form-control">
-                                                            <option value="" disabled selected>State</option>
+                                                        <select class="form-control" aria-placeholder="State">
+                                                            <option value="" disabled selected>St</option>
                                                             <option value="AL">AL</option>
                                                             <option value="AK">AK</option>
                                                             <option value="AZ">AZ</option>

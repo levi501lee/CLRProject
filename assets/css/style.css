@@ -1,3 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+#nav-container {
+  margin-top: 0px;  
+}
+
+.bg-secondary
+{
+    background-color: transparent !important;
+}
+
+}
+
 .transparent {
   border-width: 0px;
   -webkit-box-shadow: 0px 0px;
@@ -15,10 +30,14 @@ body {
   -o-animation: fadein 2s;
   animation: fadein 2s;
 
-  background-image: url('../images/so_happy-bg.png');
+  background-image: url('../images/so_happy.jpg');
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.navbar-brand {
+  background-color: red;
 }
 
 .nav-link {
@@ -101,7 +120,7 @@ body {
 }
 
 #myBtn, .navbar {
-  margin-top: 25px;
+  margin-top: 0px;
   font-size: 21px;
   text-align: center;
   -webkit-animation: fadein 2s;
