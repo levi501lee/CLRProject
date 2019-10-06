@@ -17,6 +17,12 @@ $('#btn-start').mouseover(function () {
 
 });
 
+// Dynamically creates the form to display user results
+function displayForm() {
+
+  $('.container').reset();
+}
+
 /////////////////////////////FIREBASE///////////////////////////////////////////////////////
 
 // Your web app's Firebase configuration
@@ -47,51 +53,53 @@ let isFoodToo = false;
 //Initialize database
 let database = firebase.database();
 
-// // Fires on value-change
-// database.ref().on("value", function (snapshot) {
+// Fires on value-change
+database.ref().on("value", function (snapshot) {
 
-//   // If Firebase has existing data stored (first case)
-//   if (snapshot.child("street").exists() && snapshot.child("city").exists() && snapshot.child("state").exists() && snapshot.child("zip").exists() && snapshot.child("genre").exists() || snapshot.child("movieTitle").exists() && snapshot.child("metadata").exists()) {
+  // If Firebase has existing data stored (first case)
+  if (snapshot.child("street").exists() && snapshot.child("city").exists() && snapshot.child("state").exists() && snapshot.child("zip").exists() && snapshot.child("genre").exists() || snapshot.child("movieTitle").exists() && snapshot.child("metadata").exists()) {
 
-//     street = snapshot.val().street;
-//     city = snapshot.val().city;
-//     state = snapshot.val().state;
-//     zip = snapshot.val().zip;
-//     genre = snapshot.val().genre;
-//     movieTitle = snapshot.val().movieTitle;
-//     metadata = snapshot.val().metadata;
-//     isGetLaid = snapshot.val().isGetLaid;
-//     isWorstDate = snapshot.val().isWorstDate;
-//     isFoodToo = snapshot.val().isFoodToo;
+    street = snapshot.val().street;
+    city = snapshot.val().city;
+    state = snapshot.val().state;
+    zip = snapshot.val().zip;
+    genre = snapshot.val().genre;
+    movieTitle = snapshot.val().movieTitle;
+    metadata = snapshot.val().metadata;
+    isGetLaid = snapshot.val().isGetLaid;
+    isWorstDate = snapshot.val().isWorstDate;
+    isFoodToo = snapshot.val().isFoodToo;
 
-//     // Change the HTML to reflect the stored values
-//     $('#street').text(street);
-//     $('#city').text(city);
-//     $('#state').text(state);
-//     $('#zip').text(zip);
-//     $('#genre').text(street);
-//     $('#movieTitle').text(movieTitle);
-//     $('#metadata').text(metadata);
-//     $('#isGetLaid').text(isGetLaid);
-//     $('#isWorstDate').text(isWorstDate);
-//     $('#isFoodToo').text(isFoodToo);
+    // Determine which modal form we need to pass values to
+    //if ()
+    // Change the HTML to reflect the stored values
+    $('#street').text(street);
+    $('#city').text(city);
+    $('#state').text(state);
+    $('#zip').text(zip);
+    $('#genre').text(street);
+    $('#movieTitle').text(movieTitle);
+    $('#metadata').text(metadata);
+    $('#isGetLaid').text(isGetLaid);
+    $('#isWorstDate').text(isWorstDate);
+    $('#isFoodToo').text(isFoodToo);
 
-//     // Print the data to the console.
-//     // console.log("street " + street);
-//     // console.log("city " + city);
-//     // console.log("state " + state);
-//     // console.log("zip " + zip);
-//     // console.log("genre " + genre);
-//     // console.log("movieTitle " + movieTitle);
-//     // console.log("metadata " + metadata);
-//     // console.log("isGetLaid " + isGetLaid);
-//     // console.log("isWorstDate " + isWorstDate);
-//     // console.log("isFoodToo " + isFoodToo);
-//   }
-//   // If any errors are experienced, log them to console.
-// }, function (errorObject) {
-//   console.log("The read failed: " + errorObject.code);
-// });
+    // Print the data to the console.
+    // console.log("street " + street);
+    // console.log("city " + city);
+    // console.log("state " + state);
+    // console.log("zip " + zip);
+    // console.log("genre " + genre);
+    // console.log("movieTitle " + movieTitle);
+    // console.log("metadata " + metadata);
+    // console.log("isGetLaid " + isGetLaid);
+    // console.log("isWorstDate " + isWorstDate);
+    // console.log("isFoodToo " + isFoodToo);
+  }
+  // If any errors are experienced, log them to console.
+}, function (errorObject) {
+  console.log("The read failed: " + errorObject.code);
+});
 
 /////////////////////////MODAL FUNCTIONALITY////////////////////////////////////////
 
@@ -103,21 +111,21 @@ const worstDateForm = document.querySelector('#worstDateForm');
 const leviForm = document.querySelector('#leviForm');
 
 // Pass the user values when clicked
-$('#getLaidSubmit').on('click', function () { getUserValues(this); });
-$('#worstDateSubmit').on('click', function () { getUserValues(this); });
-$('#leviFormSubmit').on('click', function () {
+$('#getLaidSubmit').on('click', function () { getUserValues('#gl'); });
+$('#worstDateSubmit').on('click', function () { getUserValues('#wd'); });
+$('#leviSubmit').on('click', function () {
 //
 });
 
 // Passes values from whichever modal is referenced
-function getUserValues(modal) {
+function getUserValues(prefix) {
   this.event.preventDefault();
-  console.log("modal " + modal.id);
-  let street = $('modal.id').getElementById('#street').val().trim();
-  let city = $('modal.id').getElementById('#city').val().trim();
-  let state = $('modal.id').getElementById('#state').val().trim();
-  let zip = $('modal.id').getElementById('#zip').val().trim();
-  let movieType = $('modal.id').getElementById('#movieType').val().trim();
+  
+  street = $(prefix + 'Street').val().trim();
+  city = $(prefix + 'City').val().trim();
+  state = $(prefix + 'State').val().trim();
+  zip = $(prefix + 'Zip').val().trim();
+  genre = $(prefix + 'Genre').val().trim();
 
   console.log("street " + street);
   console.log("city " + city);
@@ -138,11 +146,13 @@ function getUserValues(modal) {
     zip: zip,
     genre: genre
   });
+
+  //displayForm();
 }
 
 // 1st Modal ("Get Laid")
 var modal1 = document.getElementById("getLaidForm");
-var btn1 = document.getElementById("getLaid");
+var btn1 = document.getElementById("getLaidBtn");
 var span1 = document.getElementsByClassName("close1")[0];
 btn1.onclick = function () {
   modal1.style.display = "block";
@@ -158,7 +168,7 @@ window.onclick = function (event) {
 
 // 2nd Modal ("Worst Date")
 var modal2 = document.getElementById("worstDateForm");
-var btn2 = document.getElementById("worstDate");
+var btn2 = document.getElementById("worstDateBtn");
 var span2 = document.getElementsByClassName("close2")[0];
 btn2.onclick = function () {
   modal2.style.display = "block";

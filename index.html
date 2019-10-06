@@ -200,7 +200,7 @@
                               <h4 class="card-title text-primary">Get <strong>LAID</strong>!</h4>
                               <p class="card-text">Our Get Laid option will provide you and your date with a will matched movie and dinner option based on the likes of your date.</p>
                                 <!-- Modal Button in the first card -->
-                                <button class="btn btn-primary btn-get-laid mt-auto" id="getLaid">Feeling Lucky</button>
+                                <button class="btn btn-primary btn-get-laid mt-auto" id="getLaidBtn">Feeling Lucky</button>
                                 <!-- The Modal -->
                                 <div id="getLaidForm" class="modal">
                                   <!-- Modal content -->
@@ -210,16 +210,16 @@
                                           <div class="row">
                                             <form role="form">
                                                 <div class="form-group row">
-                                                    <div class="col-sm-12" id="street">
-                                                      <input class="form-control" type="text" placeholder="Street">
+                                                    <div class="col-sm-12">
+                                                      <input id="glStreet" class="form-control" type="text" placeholder="Street">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <div class="col-sm-5" id="city">
-                                                        <input class="form-control" type="text" placeholder="City">
+                                                    <div class="col-sm-5">
+                                                        <input id="glCity" class="form-control" type="text" placeholder="City">
                                                     </div>
-                                                    <div class="col-sm-3" id="state">
-                                                        <select class="form-control" aria-placeholder="State">
+                                                    <div class="col-sm-3">
+                                                        <select id="glState" class="form-control" aria-placeholder="State">
                                                             <option value="" disabled selected>St</option>
                                                             <option value="AL">AL</option>
                                                             <option value="AK">AK</option>
@@ -274,13 +274,13 @@
                                                             <option value="WY">WY</option>
                                                         </select>
                                                     </div>
-                                                    <div class="col-sm-4" id="zip">
-                                                        <input class="form-control" type="number" placeholder="Zip">
+                                                    <div class="col-sm-4">
+                                                        <input id="glZip" class="form-control" type="number" placeholder="Zip">
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
-                                                    <div class="input-group" id="movieType">
-                                                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                                    <div class="input-group">
+                                                        <select class="custom-select" id="glGenre" aria-label="Example select with button addon">
                                                           <option selected>Choose Movie Genre..</option>
                                                           <option value="1">Action</option>
                                                           <option value="2">Comedy</option>
@@ -317,7 +317,7 @@
                               <h4 class="card-title text-primary">Worst Date <strong>EVER</strong>!!</h4>
                               <p class="card-text">Ever been on such a terrible date that you just want a second date to make he or she as miserable as possible... Well this option will provide you with a second date they will not forget and will go down in their book as the worst date ever!</p>
                               <!-- Modal Button in the second card -->
-                              <button class="btn btn-primary mt-auto" id="worstDate">Let's Do This</button>
+                              <button class="btn btn-primary mt-auto" id="worstDateBtn">Let's Do This</button>
                               <!-- The Modal -->
                               <div id="worstDateForm" class="modal">
                                 <!-- Modal content -->
@@ -327,16 +327,16 @@
                                         <div class="row">
                                           <form role="form">
                                               <div class="form-group row">
-                                                  <div class="col-sm-12" id="street">
-                                                    <input class="form-control" type="text" placeholder="Street">
+                                                  <div class="col-sm-12">
+                                                    <input id="wdStreet" class="form-control" type="text" placeholder="Street">
                                                   </div>
                                               </div>
                                               <div class="form-group row">
-                                                  <div class="col-sm-5" id="city">
-                                                      <input class="form-control" type="text" placeholder="City">
+                                                  <div class="col-sm-5">
+                                                      <input id="wdCity" class="form-control" type="text" placeholder="City">
                                                   </div>
-                                                  <div class="col-sm-3" id="state">
-                                                      <select class="form-control">
+                                                  <div class="col-sm-3">
+                                                      <select id="wdState" class="form-control">
                                                           <option value="" disabled selected>State</option>
                                                           <option value="AL">AL</option>
                                                           <option value="AK">AK</option>
@@ -391,13 +391,13 @@
                                                           <option value="WY">WY</option>
                                                       </select>
                                                   </div>
-                                                  <div class="col-sm-4" id="zip">
-                                                      <input class="form-control" type="number" placeholder="Zip">
+                                                  <div class="col-sm-4">
+                                                      <input id="wdZip" class="form-control" type="number" placeholder="Zip">
                                                   </div>
                                               </div>
                                               <div class="form-group row">
-                                                  <div class="input-group" id="movieType">
-                                                      <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                                  <div class="input-group">
+                                                      <select class="custom-select" id="wdGenre" aria-label="Example select with button addon">
                                                         <option selected>Choose Movie Genre..</option>
                                                         <option value="1">Action</option>
                                                         <option value="2">Comedy</option>
@@ -443,16 +443,16 @@
                                         <div class="row">
                                           <form role="form">
                                               <div class="form-group row">
-                                                  <div class="col-sm-12" id="street">
-                                                    <input class="form-control" type="text" placeholder="Street">
+                                                  <div class="col-sm-12">
+                                                    <input id="lStreet" class="form-control" type="text" placeholder="Street">
                                                   </div>
                                               </div>
                                               <div class="form-group row">
-                                                  <div class="col-sm-5" id="city">
-                                                      <input class="form-control" type="text" placeholder="City">
+                                                  <div class="col-sm-5">
+                                                      <input id="lCity" class="form-control" type="text" placeholder="City">
                                                   </div>
-                                                  <div class="col-sm-3" id="state">
-                                                      <select class="form-control">
+                                                  <div class="col-sm-3">
+                                                      <select id="lState" class="form-control">
                                                           <option value="" disabled selected>State</option>
                                                           <option value="AL">AL</option>
                                                           <option value="AK">AK</option>
@@ -507,13 +507,13 @@
                                                           <option value="WY">WY</option>
                                                       </select>
                                                   </div>
-                                                  <div class="col-sm-4" id="zip">
-                                                      <input class="form-control" type="number" placeholder="Zip">
+                                                  <div class="col-sm-4">
+                                                      <input id="lZip" class="form-control" type="number" placeholder="Zip">
                                                   </div>
                                               </div>
                                               <div class="form-group row">
-                                                  <div class="input-group" id="movieType">
-                                                      <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                                  <div class="input-group">
+                                                      <select class="custom-select" id="lGenre" aria-label="Example select with button addon">
                                                         <option selected>Choose Movie Genre..</option>
                                                         <option value="1">Action</option>
                                                         <option value="2">Comedy</option>
