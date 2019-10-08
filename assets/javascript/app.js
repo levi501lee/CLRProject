@@ -45,10 +45,15 @@ let state = "";
 let zip = "";
 let genre = "";
 let movieTitle = "";
-let metadata = "";
+let metaScore = "";
 let isGetLaid = false;
 let isWorstDate = false;
 let isFoodToo = false;
+
+// Global variable for API reference
+let lat = 0;
+let lng = 0;
+let latLng = "";
 
 //Initialize database
 let database = firebase.database();
@@ -57,7 +62,7 @@ let database = firebase.database();
 database.ref().on("value", function (snapshot) {
 
   // If Firebase has existing data stored (first case)
-  if (snapshot.child("street").exists() && snapshot.child("city").exists() && snapshot.child("state").exists() && snapshot.child("zip").exists() && snapshot.child("genre").exists() || snapshot.child("movieTitle").exists() && snapshot.child("metadata").exists()) {
+  if (snapshot.child("street").exists() && snapshot.child("city").exists() && snapshot.child("state").exists() && snapshot.child("zip").exists() && snapshot.child("genre").exists() || snapshot.child("movieTitle").exists() && snapshot.child("metaScore").exists()) {
 
     street = snapshot.val().street;
     city = snapshot.val().city;
@@ -65,7 +70,7 @@ database.ref().on("value", function (snapshot) {
     zip = snapshot.val().zip;
     genre = snapshot.val().genre;
     movieTitle = snapshot.val().movieTitle;
-    metadata = snapshot.val().metadata;
+    metaScore = snapshot.val().metaScore;
     isGetLaid = snapshot.val().isGetLaid;
     isWorstDate = snapshot.val().isWorstDate;
     isFoodToo = snapshot.val().isFoodToo;
@@ -79,7 +84,7 @@ database.ref().on("value", function (snapshot) {
     $('#zip').text(zip);
     $('#genre').text(street);
     $('#movieTitle').text(movieTitle);
-    $('#metadata').text(metadata);
+    $('#metaScore').text(metaScore);
     $('#isGetLaid').text(isGetLaid);
     $('#isWorstDate').text(isWorstDate);
     $('#isFoodToo').text(isFoodToo);
@@ -91,7 +96,7 @@ database.ref().on("value", function (snapshot) {
     // console.log("zip " + zip);
     // console.log("genre " + genre);
     // console.log("movieTitle " + movieTitle);
-    // console.log("metadata " + metadata);
+    // console.log("metaScore " + metaScore);
     // console.log("isGetLaid " + isGetLaid);
     // console.log("isWorstDate " + isWorstDate);
     // console.log("isFoodToo " + isFoodToo);
@@ -133,7 +138,7 @@ function getUserValues(prefix) {
   console.log("zip " + zip);
   console.log("genre " + genre);
   console.log("movieTitle " + movieTitle);
-  console.log("metadata " + metadata);
+  console.log("metaScore " + metaScore);
   console.log("isGetLaid " + isGetLaid);
   console.log("isWorstDate " + isWorstDate);
   console.log("isFoodToo " + isFoodToo);
@@ -197,3 +202,31 @@ window.onclick = function (event) {
     modal3.style.display = "none";
   }
 }
+
+/////////////////////////API////////////////////////////////////////////
+
+     // This .on(“click”) function will trigger the AJAX Call
+     $('#getLaidSubmit').on('click', function(event) {
+       // event.preventDefault() can be used to prevent an event’s default behavior.
+       // Here, it prevents the submit button from trying to submit a form when clicked
+       event.preventDefault();
+       city = $('#glStreet').val().trim();
+       state = $('#glCity').val().trim();
+       // Here we grab the text from the input box
+       let cityState = city + "," + state;
+       // Here we construct our URL http://www.mapquestapi.com/geocoding/v1/address?key=KEY&location=Washington,DC
+       let queryURL = 'http://www.mapquestapi.com/geocoding/v1/address?key=DFacdC8YGDXMAokPqwGxGK7PSTV8xHSI' + '&location=' + cityState;
+       //ajax to call to write results of lat long to div id=latlong-view
+       $.ajax({
+         url: queryURL,
+         method: 'GET'
+       }).then(function(response) {
+         $('#jsonResponse').text(JSON.stringify(response));
+          console.log(response);
+         lat = response.results[0].locations[0].latlng[0].lat;
+         console.log(lat);
+         lng = response.results[0].locations[0].latlng[0].lng;
+         console.log(lng);
+         latLng = "https://api.yelp.com/v3/businesses/search?text=restaurant&latitude=40.569710&longitude=-111.897278";
+       });
+      });
