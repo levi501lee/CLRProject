@@ -1,69 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-
-  <style type="text/css">
-    button,
-    div,
-    form,
-    input {
-      margin: 10px;
-    }
-  </style>
-
-  <!--Reset CSS-->
-  <link rel="stylesheet" href="assets/css/reset.css">
-
-  <!--Media Query-->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-  <!-- Original CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-  <title>Taste in Movies</title>
-</head>
-
-<body>
-  <div class="container">
-    <h1>Food Search</h1>
-
-    <!-- Rendered Buttons will get Dumped Here  -->
-    <div id="buttons-view"></div>
-
-
-    <!-- GET https://api.yelp.com/v3/businesses/search
-      f8jhYkMcsjmXcHT9h6iQcw
-    GET https://api.yelp.com/v3/autocomplete?text=del&latitude=40.569710&longitude=-111.897278 -->
-
-    <div class="container">
-      <h1>Movie Search</h1>
-
-      <!-- Rendered Buttons will get Dumped Here  -->
-      <div id="buttons-view"></div>
-
-      <form id="movie-form">
-        <label for="movie-input">Add a Movie, Yo!</label>
-        <input type="text" id="movie-input"><br>
-
-        <!-- Button triggers new movie to be added -->
-        <input id="add-movie" type="submit" value="Add a Movie, Yo!">
-      </form>
-
-      <!-- Movies will Get Dumped Here -->
-      <div id="movies-view"></div>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script type="text/javascript">
-        // Initial array of movies
+       // Initial array of movies
         var movies = ["Batman"];
         var cors = 'https://cors-anywhere.herokuapp.com/'
         // Function for dumping the JSON content for each button into the div
@@ -144,12 +79,3 @@
 
         // Calling the renderButtons function to display the initial buttons
         renderButtons();
-
-
-
-
-      </script>
-    </div>
-</body>
-
-</html>
