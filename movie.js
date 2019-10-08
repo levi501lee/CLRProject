@@ -32,9 +32,11 @@ $("#searchTerm").on("click", function () {
             var title = response.title;
             var genre = response.Genre;
             var metascore = response.Metascore;
+            var rated = response.rated;
             console.log(title);
             console.log(genre);
             console.log(metascore);
+            console.log(rated);
 
 
             database.ref().set({
