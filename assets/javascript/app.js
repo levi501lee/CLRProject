@@ -20,10 +20,7 @@ $('#btn-start').mouseover(function () {
 // Dynamically creates the form to display user results
 function displayForm() {
 
-  // First, clear the existing elements
-  $('.container').reset();
-
-  
+  let newDiv = $('');
 }
 
 /////////////////////////////FIREBASE///////////////////////////////////////////////////////
