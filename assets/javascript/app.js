@@ -119,13 +119,13 @@ const leviForm = document.querySelector('#leviForm');
 $('#getLaidSubmit').on('click', function () { getUserValues('#gl'); });
 $('#worstDateSubmit').on('click', function () { getUserValues('#wd'); });
 $('#leviSubmit').on('click', function () {
-//
+  //
 });
 
 // Passes values from whichever modal is referenced
 function getUserValues(prefix) {
   this.event.preventDefault();
-  
+
   street = $(prefix + 'Street').val().trim();
   city = $(prefix + 'City').val().trim();
   state = $(prefix + 'State').val().trim();
@@ -205,28 +205,41 @@ window.onclick = function (event) {
 
 /////////////////////////API////////////////////////////////////////////
 
-     // This .on(“click”) function will trigger the AJAX Call
-     $('#getLaidSubmit').on('click', function(event) {
-       // event.preventDefault() can be used to prevent an event’s default behavior.
-       // Here, it prevents the submit button from trying to submit a form when clicked
-       event.preventDefault();
-       city = $('#glStreet').val().trim();
-       state = $('#glCity').val().trim();
-       // Here we grab the text from the input box
-       let cityState = city + "," + state;
-       // Here we construct our URL http://www.mapquestapi.com/geocoding/v1/address?key=KEY&location=Washington,DC
-       let queryURL = 'http://www.mapquestapi.com/geocoding/v1/address?key=DFacdC8YGDXMAokPqwGxGK7PSTV8xHSI' + '&location=' + cityState;
-       //ajax to call to write results of lat long to div id=latlong-view
-       $.ajax({
-         url: queryURL,
-         method: 'GET'
-       }).then(function(response) {
-         $('#jsonResponse').text(JSON.stringify(response));
-          console.log(response);
-         lat = response.results[0].locations[0].latlng[0].lat;
-         console.log(lat);
-         lng = response.results[0].locations[0].latlng[0].lng;
-         console.log(lng);
-         latLng = "https://api.yelp.com/v3/businesses/search?text=restaurant&latitude=40.569710&longitude=-111.897278";
-       });
-      });
+// This .on(“click”) function will trigger the AJAX Call
+$('#getLaidSubmit').on('click', (event) => {
+  // event.preventDefault() can be used to prevent an event’s default behavior.
+  // Here, it prevents the submit button from trying to submit a form when clicked
+  event.preventDefault();
+  city = $('#glStreet').val().trim();
+  state = $('#glCity').val().trim();
+  // Here we grab the text from the input box
+  let cityState = city + "," + state;
+  // Here we construct our URL http://www.mapquestapi.com/geocoding/v1/address?key=KEY&location=Washington,DC
+  let queryURL = 'http://www.mapquestapi.com/geocoding/v1/address?key=DFacdC8YGDXMAokPqwGxGK7PSTV8xHSI' + '&location=' + cityState;
+  //ajax to call to write results of lat long to div id=latlong-view
+  $.ajax({
+    url: queryURL,
+    method: 'GET'
+  }).then((response) => {
+    $('#jsonResponse').text(JSON.stringify(response));
+    console.log(response);
+    lat = response.results[0].locations[0].latLng.lat;
+    console.log(lat);
+    lng = response.results[0].locations[0].latLng.lng;
+    console.log(lng);
+    latLng = "'https://api.yelp.com/v3/businesses/search?text=restaurant&latitude=' + lat + '&longitude=' + lng";
+  });
+  // AJAX to reference Yelp! and pass the latLng so we can retrieve restaurant data
+  $.ajax({
+    url: queryURL,
+    method: 'GET'
+  }).then((response) => {
+    $('#jsonResponse').text(JSON.stringify(response));
+    console.log(response);
+    lat = response.results[0].locations[0].latLng.lat;
+    console.log(lat);
+    lng = response.results[0].locations[0].latLng.lng;
+    console.log(lng);
+    latLng = "'https://api.yelp.com/v3/businesses/search?text=restaurant&latitude=' + lat + '&longitude=' + lng";
+  });
+});
