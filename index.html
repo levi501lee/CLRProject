@@ -5,72 +5,62 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
 
-  <!-- Flavicon -->
-  <link rel="shortcut icon" href="favicon.ico">
+    <!-- Flavicon -->
+    <link rel="shortcut icon" sizes="32X32" href="favicon_heart.ico">
 
-  <!--Reset CSS-->
-  <link rel="stylesheet" href="assets/css/reset.css">
+    <!--Reset CSS-->
+    <link rel="stylesheet" href="assets/css/reset.css">
 
-  <!--Media Query-->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--Media Query-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Vendor Stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700%7CRoboto:300,400,700" rel="stylesheet">
+    <link href="assets/css/material-design-iconic-font.css" rel="stylesheet">
+    <link href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../assets/vendor/aos/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <!-- Original CSS -->
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Theme StyleSheets -->
+    <link href="assets/css/theme.css" rel="stylesheet">
 
-  <title>Taste in Movies</title>
+    <!-- Original CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- Firebase References -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+    <title>Taste in Movies</title>
 </head>
 
 <body>
+    <!-- Header -->
+    <header class="spyre-navbar navbar navbar-expand-lg bg-secondary navbar-dark fixed-top align-items-center"
+        data-transparent data-text-color="#ffffff" id="navBar">
+        <div class="container">
+            <a class="navbar-brand mr-lg-5 mr-xl-7" href="../pages/index.html">
+                <img src="assets/images/TasteNMovies-01.svg" class="d-none d-lg-block" alt="Spyre" width="200" />
+                <img src="assets/images/TasteNMovies-01.svg" class="d-block d-lg-none" alt="Spyre" width="150" />
+            </a>
 
-  <!-- <div class='container container-fluid col-sm-12 col-md-12 col-lg-12 col-xl-12'>
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary" id="navbar1">
-          <div class="container">
-              <a class="navbar-brand mr-1 mb-1 mt-0" href="../">Taste 'n Dates</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
-                  <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="navbar-collapse collapse justify-content-center" id="collapsingNavbar">
-                  <ul class="navbar-nav ml-auto">
-                      <li class="nav-item">
-                          <a class="nav-link" href="#modals">info@tasteinmovies.com</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="#forms">Forms</a>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-      </nav>  -->
-  <nav class="navbar navbar-expand-lg transparent">
-    <a class="navbar-brand" href="#">Taste in Movies</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto col-sm-9 col-md-9 col-lg-9 col-xl-9">
-        <li class="nav-item">
-          <a class="nav-link" href="#">info@tasteinmovies.com</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">1(801)555-5555</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <main>
-    <!-- <section>
+            <span class="navbar-text flex-fill d-none d-md-inline-block text-white">
+                Contact us: <a href="#" class="pl-2 text-white">info@tasteInMovies.com</a><a href="#"
+                    class="pl-5 text-white">+1-800-GET-DATE</a>
+            </span>
+        </div>
+    </header>
+    <!-- End of Header -->
+    <main>
+        <!-- <section>
     Trigger/Open The Modal
     <button id="myBtn">Open Modal</button>
     The Modal
@@ -178,373 +168,387 @@
             </section>
         </div>
     </div>
-<<<<<<< HEAD
-
-    <div class="col-lg-6">
-      <div class="card">
-          <div class="card-header">
-              What movie will you be seeing tonight?
-          </div>
-          <div class="card-body">
-
-              <!-- Sign-up Form (note the various input "types")-->
-              <form role="form">
-                  <div class="form-group">
-                      <label for="name-input">Movie Title:</label>
-                      <input class="form-control" id="title-input" type="text">
-                      <button class="btn btn-default" id="add-user" type="submit">Submit</button>
-                  </div>
-
-
-=======
   </section> -->
-  <section class="container">
-      <div class="row vh-100">
-          <div class="col-12 my-auto">
-              <div class="row text-center">
-                  <!-- getLaid -->
-                  <div class="col-lg-4 mb-4">
-                      <div class="card h-100">
-                          <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                              <h1 class="display-2 text-primary"><span class="ion ion-ios-snow-outline"></span></h1>
-                              <h4 class="card-title text-primary">Get Laid</h4>
-                              <p class="card-text">Our Get Laid option will provide you and your date with a will matched movie and dinner option based on the likes of your date.</p>
-                                <!-- Modal Button in the first card -->
-                                <button class="btn btn-primary mt-auto" id="getLaid">Feeling Lucky</button>
-                                <!-- The Modal -->
-                                <div id="getLaidForm" class="modal">
-                                  <!-- Modal content -->
-                                  <div class="modal-content">
-                                      <span class="close1">&times;</span>
-                                      <section id="forms" class="container pb-10">
-                                          <div class="row">
-                                            <form role="form">
-                                                <div class="form-group row">
-                                                    <div class="col-sm-12" id="street">
-                                                      <input class="form-control" type="text" placeholder="Street">
-                                                    </div>
+        <section class="container">
+            <div class="row vh-100">
+                <div class="col-12 my-auto">
+                    <div class="row text-center">
+                        <!-- getLaid -->
+                        <div class="col-lg-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                    <h1 class="display-2 text-primary"><span class="ion ion-ios-snow-outline"></span>
+                                    </h1>
+                                    <h4 class="card-title text-primary">Get <strong>LAID</strong>!</h4>
+                                    <p class="card-text">Our Get Laid option will provide you and your date with a will
+                                        matched movie and dinner option based on the likes of your date.</p>
+                                    <!-- Modal Button in the first card -->
+                                    <button class="btn btn-primary btn-get-laid mt-auto" id="getLaidBtn">Feeling
+                                        Lucky</button>
+                                    <!-- The Modal -->
+                                    <div id="getLaidForm" class="modal">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close1">&times;</span>
+                                            <section id="forms" class="container pb-10">
+                                                <div class="row">
+                                                    <form role="form">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-12">
+                                                                <input id="glStreet" class="form-control" type="text"
+                                                                    placeholder="Street">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-5">
+                                                                <input id="glCity" class="form-control" type="text"
+                                                                    placeholder="City">
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <select id="glState" class="form-control"
+                                                                    aria-placeholder="State">
+                                                                    <option value="" disabled selected>St</option>
+                                                                    <option value="AL">AL</option>
+                                                                    <option value="AK">AK</option>
+                                                                    <option value="AZ">AZ</option>
+                                                                    <option value="AR">AR</option>
+                                                                    <option value="CA">CA</option>
+                                                                    <option value="CO">CO</option>
+                                                                    <option value="CT">CT</option>
+                                                                    <option value="DE">DE</option>
+                                                                    <option value="DC">DC</option>
+                                                                    <option value="FL">FL</option>
+                                                                    <option value="GA">GA</option>
+                                                                    <option value="HI">HI</option>
+                                                                    <option value="ID">ID</option>
+                                                                    <option value="IL">IL</option>
+                                                                    <option value="IN">IN</option>
+                                                                    <option value="IA">IA</option>
+                                                                    <option value="KS">KS</option>
+                                                                    <option value="KY">KY</option>
+                                                                    <option value="LA">LA</option>
+                                                                    <option value="ME">ME</option>
+                                                                    <option value="MD">MD</option>
+                                                                    <option value="MA">MA</option>
+                                                                    <option value="MI">MI</option>
+                                                                    <option value="MN">MN</option>
+                                                                    <option value="MS">MS</option>
+                                                                    <option value="MO">MO</option>
+                                                                    <option value="MT">MT</option>
+                                                                    <option value="NE">NE</option>
+                                                                    <option value="NV">NV</option>
+                                                                    <option value="NH">NH</option>
+                                                                    <option value="NJ">NJ</option>
+                                                                    <option value="NM">NM</option>
+                                                                    <option value="NY">NY</option>
+                                                                    <option value="NC">NC</option>
+                                                                    <option value="ND">ND</option>
+                                                                    <option value="OH">OH</option>
+                                                                    <option value="OK">OK</option>
+                                                                    <option value="OR">OR</option>
+                                                                    <option value="PA">PA</option>
+                                                                    <option value="RI">RI</option>
+                                                                    <option value="SC">SC</option>
+                                                                    <option value="SD">SD</option>
+                                                                    <option value="TN">TN</option>
+                                                                    <option value="TX">TX</option>
+                                                                    <option value="UT">UT</option>
+                                                                    <option value="VT">VT</option>
+                                                                    <option value="VA">VA</option>
+                                                                    <option value="WA">WA</option>
+                                                                    <option value="WV">WV</option>
+                                                                    <option value="WI">WI</option>
+                                                                    <option value="WY">WY</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <input id="glZip" class="form-control" type="number"
+                                                                    placeholder="Zip">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="input-group">
+                                                                <select class="custom-select" id="glGenre"
+                                                                    aria-label="Example select with button addon">
+                                                                    <option selected>Choose Movie Genre..</option>
+                                                                    <option value="1">Action</option>
+                                                                    <option value="2">Comedy</option>
+                                                                    <option value="3">Romance</option>
+                                                                    <option value="4">Musical</option>
+                                                                    <option value="5">Rom-Com</option>
+                                                                    <option value="6">Horror</option>
+                                                                    <option value="7">Drama</option>
+                                                                    <option value="8">Documentary</option>
+                                                                    <option value="9">Animation</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row" id="modalButtons">
+                                                            <div>
+                                                                <input type="reset"
+                                                                    class="btn btn-cancel btn-outline-secondary mr-2"
+                                                                    value="Cancel">
+                                                                <input type="button" id="getLaidSubmit"
+                                                                    class="btn btn-submit btn-primary mr-2"
+                                                                    value="Submit">
+                                                            </div>
+
+                                                        </div>
+                                                    </form>
                                                 </div>
-                                                <div class="form-group row">
-                                                    <div class="col-sm-5" id="city">
-                                                        <input class="form-control" type="text" placeholder="City">
-                                                    </div>
-                                                    <div class="col-sm-3" id="state">
-                                                        <select class="form-control">
-                                                            <option value="" disabled selected>State</option>
-                                                            <option value="AL">AL</option>
-                                                            <option value="AK">AK</option>
-                                                            <option value="AZ">AZ</option>
-                                                            <option value="AR">AR</option>
-                                                            <option value="CA">CA</option>
-                                                            <option value="CO">CO</option>
-                                                            <option value="CT">CT</option>
-                                                            <option value="DE">DE</option>
-                                                            <option value="DC">DC</option>
-                                                            <option value="FL">FL</option>
-                                                            <option value="GA">GA</option>
-                                                            <option value="HI">HI</option>
-                                                            <option value="ID">ID</option>
-                                                            <option value="IL">IL</option>
-                                                            <option value="IN">IN</option>
-                                                            <option value="IA">IA</option>
-                                                            <option value="KS">KS</option>
-                                                            <option value="KY">KY</option>
-                                                            <option value="LA">LA</option>
-                                                            <option value="ME">ME</option>
-                                                            <option value="MD">MD</option>
-                                                            <option value="MA">MA</option>
-                                                            <option value="MI">MI</option>
-                                                            <option value="MN">MN</option>
-                                                            <option value="MS">MS</option>
-                                                            <option value="MO">MO</option>
-                                                            <option value="MT">MT</option>
-                                                            <option value="NE">NE</option>
-                                                            <option value="NV">NV</option>
-                                                            <option value="NH">NH</option>
-                                                            <option value="NJ">NJ</option>
-                                                            <option value="NM">NM</option>
-                                                            <option value="NY">NY</option>
-                                                            <option value="NC">NC</option>
-                                                            <option value="ND">ND</option>
-                                                            <option value="OH">OH</option>
-                                                            <option value="OK">OK</option>
-                                                            <option value="OR">OR</option>
-                                                            <option value="PA">PA</option>
-                                                            <option value="RI">RI</option>
-                                                            <option value="SC">SC</option>
-                                                            <option value="SD">SD</option>
-                                                            <option value="TN">TN</option>
-                                                            <option value="TX">TX</option>
-                                                            <option value="UT">UT</option>
-                                                            <option value="VT">VT</option>
-                                                            <option value="VA">VA</option>
-                                                            <option value="WA">WA</option>
-                                                            <option value="WV">WV</option>
-                                                            <option value="WI">WI</option>
-                                                            <option value="WY">WY</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-sm-4" id="zip">
-                                                        <input class="form-control" type="number" placeholder="Zip">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group row">
-                                                    <div class="input-group" id="movieType">
-                                                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                                          <option selected>Choose Movie Genre..</option>
-                                                          <option value="1">Action</option>
-                                                          <option value="2">Comedy</option>
-                                                          <option value="3">Romance</option>
-                                                          <option value="4">Musical</option>
-                                                          <option value="5">Rom-Com</option>
-                                                          <option value="6">Horror</option>
-                                                          <option value="7">Drama</option>
-                                                          <option value="8">Documentary</option>
-                                                          <option value="9">Animation</option>
-                                                        </select>
-                                                      </div>
-                                                </div>
-                                                <div class="form-group row" id="modalButtons">
-                                                    <div>
-                                                        <input type="reset" class="btn btn-cancel btn-outline-secondary mr-2" value="Cancel">
-                                                        <input type="button" class="btn btn-submit btn-primary mr-2" value="Submit">
-                                                    </div>
-                                                    
-                                                </div>
-                                            </form>
-                                          </div>
-                                        </section>
+                                            </section>
+                                        </div>
                                     </div>
                                 </div>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- worstDate -->
-                  <div class="col-lg-4 mb-4">
-                      <div class="card h-100">
-                          <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                              <h1 class="display-2 text-primary"><span class="ion ion-ios-tablet-portrait-outline"></span></h1>
-                              <h4 class="card-title text-primary">Worst Date EVER!!</h4>
-                              <p class="card-text">Ever been on such a terrible date that you just want a second date to make he or she as miserable as possible... Well this option will provide you with a second date they will not forget and will go down in their book as the worst date ever!</p>
-                              <!-- Modal Button in the second card -->
-                              <button class="btn btn-primary mt-auto" id="worstDate">Let's Do This</button>
-                              <!-- The Modal -->
-                              <div id="worstDateForm" class="modal">
-                                <!-- Modal content -->
-                                <div class="modal-content">
-                                    <span class="close2">&times;</span>
-                                    <section id="forms" class="container pb-10">
-                                        <div class="row">
-                                          <form role="form">
-                                              <div class="form-group row">
-                                                  <div class="col-sm-12" id="street">
-                                                    <input class="form-control" type="text" placeholder="Street">
-                                                  </div>
-                                              </div>
-                                              <div class="form-group row">
-                                                  <div class="col-sm-5" id="city">
-                                                      <input class="form-control" type="text" placeholder="City">
-                                                  </div>
-                                                  <div class="col-sm-3" id="state">
-                                                      <select class="form-control">
-                                                          <option value="" disabled selected>State</option>
-                                                          <option value="AL">AL</option>
-                                                          <option value="AK">AK</option>
-                                                          <option value="AZ">AZ</option>
-                                                          <option value="AR">AR</option>
-                                                          <option value="CA">CA</option>
-                                                          <option value="CO">CO</option>
-                                                          <option value="CT">CT</option>
-                                                          <option value="DE">DE</option>
-                                                          <option value="DC">DC</option>
-                                                          <option value="FL">FL</option>
-                                                          <option value="GA">GA</option>
-                                                          <option value="HI">HI</option>
-                                                          <option value="ID">ID</option>
-                                                          <option value="IL">IL</option>
-                                                          <option value="IN">IN</option>
-                                                          <option value="IA">IA</option>
-                                                          <option value="KS">KS</option>
-                                                          <option value="KY">KY</option>
-                                                          <option value="LA">LA</option>
-                                                          <option value="ME">ME</option>
-                                                          <option value="MD">MD</option>
-                                                          <option value="MA">MA</option>
-                                                          <option value="MI">MI</option>
-                                                          <option value="MN">MN</option>
-                                                          <option value="MS">MS</option>
-                                                          <option value="MO">MO</option>
-                                                          <option value="MT">MT</option>
-                                                          <option value="NE">NE</option>
-                                                          <option value="NV">NV</option>
-                                                          <option value="NH">NH</option>
-                                                          <option value="NJ">NJ</option>
-                                                          <option value="NM">NM</option>
-                                                          <option value="NY">NY</option>
-                                                          <option value="NC">NC</option>
-                                                          <option value="ND">ND</option>
-                                                          <option value="OH">OH</option>
-                                                          <option value="OK">OK</option>
-                                                          <option value="OR">OR</option>
-                                                          <option value="PA">PA</option>
-                                                          <option value="RI">RI</option>
-                                                          <option value="SC">SC</option>
-                                                          <option value="SD">SD</option>
-                                                          <option value="TN">TN</option>
-                                                          <option value="TX">TX</option>
-                                                          <option value="UT">UT</option>
-                                                          <option value="VT">VT</option>
-                                                          <option value="VA">VA</option>
-                                                          <option value="WA">WA</option>
-                                                          <option value="WV">WV</option>
-                                                          <option value="WI">WI</option>
-                                                          <option value="WY">WY</option>
-                                                      </select>
-                                                  </div>
-                                                  <div class="col-sm-4" id="zip">
-                                                      <input class="form-control" type="number" placeholder="Zip">
-                                                  </div>
-                                              </div>
-                                              <div class="form-group row">
-                                                  <div class="input-group" id="movieType">
-                                                      <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                                        <option selected>Choose Movie Genre..</option>
-                                                        <option value="1">Action</option>
-                                                        <option value="2">Comedy</option>
-                                                        <option value="3">Romance</option>
-                                                        <option value="4">Musical</option>
-                                                        <option value="5">Rom-Com</option>
-                                                        <option value="6">Horror</option>
-                                                        <option value="7">Drama</option>
-                                                        <option value="8">Documentary</option>
-                                                        <option value="9">Animation</option>
-                                                      </select>
-                                                    </div>
-                                              </div>
-                                              <div class="form-group row" id="modalButtons">
-                                                  <div>
-                                                      <input type="reset" class="btn btn-outline-secondary mr-2" value="Cancel">
-                                                      <input type="button" class="btn btn-primary mr-2" value="Submit">
-                                                  </div>
-                                                  
-                                              </div>
-                                          </form>
+                            </div>
+                        </div>
+                        <!-- worstDate -->
+                        <div class="col-lg-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                    <h1 class="display-2 text-primary"><span
+                                            class="ion ion-ios-tablet-portrait-outline"></span></h1>
+                                    <h4 class="card-title text-primary">Worst Date <strong>EVER</strong>!!</h4>
+                                    <p class="card-text">Ever been on such a terrible date that you just want a second
+                                        date to make he or she as miserable as possible... Well this option will provide
+                                        you with a second date they will not forget and will go down in their book as
+                                        the worst date ever!</p>
+                                    <!-- Modal Button in the second card -->
+                                    <button class="btn btn-primary mt-auto" id="worstDateBtn">Let's Do This</button>
+                                    <!-- The Modal -->
+                                    <div id="worstDateForm" class="modal">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close2">&times;</span>
+                                            <section id="forms" class="container pb-10">
+                                                <div class="row">
+                                                    <form role="form">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-12">
+                                                                <input id="wdStreet" class="form-control" type="text"
+                                                                    placeholder="Street">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-5">
+                                                                <input id="wdCity" class="form-control" type="text"
+                                                                    placeholder="City">
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <select id="wdState" class="form-control">
+                                                                    <option value="" disabled selected>State</option>
+                                                                    <option value="AL">AL</option>
+                                                                    <option value="AK">AK</option>
+                                                                    <option value="AZ">AZ</option>
+                                                                    <option value="AR">AR</option>
+                                                                    <option value="CA">CA</option>
+                                                                    <option value="CO">CO</option>
+                                                                    <option value="CT">CT</option>
+                                                                    <option value="DE">DE</option>
+                                                                    <option value="DC">DC</option>
+                                                                    <option value="FL">FL</option>
+                                                                    <option value="GA">GA</option>
+                                                                    <option value="HI">HI</option>
+                                                                    <option value="ID">ID</option>
+                                                                    <option value="IL">IL</option>
+                                                                    <option value="IN">IN</option>
+                                                                    <option value="IA">IA</option>
+                                                                    <option value="KS">KS</option>
+                                                                    <option value="KY">KY</option>
+                                                                    <option value="LA">LA</option>
+                                                                    <option value="ME">ME</option>
+                                                                    <option value="MD">MD</option>
+                                                                    <option value="MA">MA</option>
+                                                                    <option value="MI">MI</option>
+                                                                    <option value="MN">MN</option>
+                                                                    <option value="MS">MS</option>
+                                                                    <option value="MO">MO</option>
+                                                                    <option value="MT">MT</option>
+                                                                    <option value="NE">NE</option>
+                                                                    <option value="NV">NV</option>
+                                                                    <option value="NH">NH</option>
+                                                                    <option value="NJ">NJ</option>
+                                                                    <option value="NM">NM</option>
+                                                                    <option value="NY">NY</option>
+                                                                    <option value="NC">NC</option>
+                                                                    <option value="ND">ND</option>
+                                                                    <option value="OH">OH</option>
+                                                                    <option value="OK">OK</option>
+                                                                    <option value="OR">OR</option>
+                                                                    <option value="PA">PA</option>
+                                                                    <option value="RI">RI</option>
+                                                                    <option value="SC">SC</option>
+                                                                    <option value="SD">SD</option>
+                                                                    <option value="TN">TN</option>
+                                                                    <option value="TX">TX</option>
+                                                                    <option value="UT">UT</option>
+                                                                    <option value="VT">VT</option>
+                                                                    <option value="VA">VA</option>
+                                                                    <option value="WA">WA</option>
+                                                                    <option value="WV">WV</option>
+                                                                    <option value="WI">WI</option>
+                                                                    <option value="WY">WY</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <input id="wdZip" class="form-control" type="number"
+                                                                    placeholder="Zip">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="input-group">
+                                                                <select class="custom-select" id="wdGenre"
+                                                                    aria-label="Example select with button addon">
+                                                                    <option selected>Choose Movie Genre..</option>
+                                                                    <option value="1">Action</option>
+                                                                    <option value="2">Comedy</option>
+                                                                    <option value="3">Romance</option>
+                                                                    <option value="4">Musical</option>
+                                                                    <option value="5">Rom-Com</option>
+                                                                    <option value="6">Horror</option>
+                                                                    <option value="7">Drama</option>
+                                                                    <option value="8">Documentary</option>
+                                                                    <option value="9">Animation</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row" id="modalButtons">
+                                                            <div>
+                                                                <input type="reset"
+                                                                    class="btn btn-outline-secondary mr-2"
+                                                                    value="Cancel">
+                                                                <input type="button" id="worstDateSubmit"
+                                                                    class="btn btn-primary mr-2" value="Submit">
+                                                            </div>
+
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </section>
                                         </div>
-                                      </section>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- Levi's Modal -->
-                  <div class="col-lg-4 mb-4">
-                      <div class="card h-100">
-                          <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                              <h1 class="display-2 text-primary"><span class="ion ion-ios-tablet-portrait-outline"></span></h1>
-                              <h4 class="card-title text-primary">What Movie Are You Going To See?</h4>
-                              <p class="card-text"></p>
-                              <!-- Levi's Modal Button in the third card -->
-                              <button class="btn btn-primary mt-auto" id="leviBtn">Submit</button>
-                              <div id="leviForm" class="modal">
-                                <!-- Levi's Modal content -->
-                                <div class="modal-content">
-                                    <span class="close2">&times;</span>
-                                    <section id="forms" class="container pb-10">
-                                        <div class="row">
-                                          <form role="form">
-                                              <div class="form-group row">
-                                                  <div class="col-sm-12" id="street">
-                                                    <input class="form-control" type="text" placeholder="Street">
-                                                  </div>
-                                              </div>
-                                              <div class="form-group row">
-                                                  <div class="col-sm-5" id="city">
-                                                      <input class="form-control" type="text" placeholder="City">
-                                                  </div>
-                                                  <div class="col-sm-3" id="state">
-                                                      <select class="form-control">
-                                                          <option value="" disabled selected>State</option>
-                                                          <option value="AL">AL</option>
-                                                          <option value="AK">AK</option>
-                                                          <option value="AZ">AZ</option>
-                                                          <option value="AR">AR</option>
-                                                          <option value="CA">CA</option>
-                                                          <option value="CO">CO</option>
-                                                          <option value="CT">CT</option>
-                                                          <option value="DE">DE</option>
-                                                          <option value="DC">DC</option>
-                                                          <option value="FL">FL</option>
-                                                          <option value="GA">GA</option>
-                                                          <option value="HI">HI</option>
-                                                          <option value="ID">ID</option>
-                                                          <option value="IL">IL</option>
-                                                          <option value="IN">IN</option>
-                                                          <option value="IA">IA</option>
-                                                          <option value="KS">KS</option>
-                                                          <option value="KY">KY</option>
-                                                          <option value="LA">LA</option>
-                                                          <option value="ME">ME</option>
-                                                          <option value="MD">MD</option>
-                                                          <option value="MA">MA</option>
-                                                          <option value="MI">MI</option>
-                                                          <option value="MN">MN</option>
-                                                          <option value="MS">MS</option>
-                                                          <option value="MO">MO</option>
-                                                          <option value="MT">MT</option>
-                                                          <option value="NE">NE</option>
-                                                          <option value="NV">NV</option>
-                                                          <option value="NH">NH</option>
-                                                          <option value="NJ">NJ</option>
-                                                          <option value="NM">NM</option>
-                                                          <option value="NY">NY</option>
-                                                          <option value="NC">NC</option>
-                                                          <option value="ND">ND</option>
-                                                          <option value="OH">OH</option>
-                                                          <option value="OK">OK</option>
-                                                          <option value="OR">OR</option>
-                                                          <option value="PA">PA</option>
-                                                          <option value="RI">RI</option>
-                                                          <option value="SC">SC</option>
-                                                          <option value="SD">SD</option>
-                                                          <option value="TN">TN</option>
-                                                          <option value="TX">TX</option>
-                                                          <option value="UT">UT</option>
-                                                          <option value="VT">VT</option>
-                                                          <option value="VA">VA</option>
-                                                          <option value="WA">WA</option>
-                                                          <option value="WV">WV</option>
-                                                          <option value="WI">WI</option>
-                                                          <option value="WY">WY</option>
-                                                      </select>
-                                                  </div>
-                                                  <div class="col-sm-4" id="zip">
-                                                      <input class="form-control" type="number" placeholder="Zip">
-                                                  </div>
-                                              </div>
-                                              <div class="form-group row">
-                                                  <div class="input-group" id="movieType">
-                                                      <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                                        <option selected>Choose Movie Genre..</option>
-                                                        <option value="1">Action</option>
-                                                        <option value="2">Comedy</option>
-                                                        <option value="3">Romance</option>
-                                                        <option value="4">Musical</option>
-                                                        <option value="5">Rom-Com</option>
-                                                        <option value="6">Horror</option>
-                                                        <option value="7">Drama</option>
-                                                        <option value="8">Documentary</option>
-                                                        <option value="9">Animation</option>
-                                                      </select>
-                                                    </div>
-                                              </div>
-                                              <div class="form-group row" id="modalButtons">
-                                                  <div>
-                                                      <input type="reset" class="btn btn-outline-secondary mr-2" value="Cancel">
-                                                      <input type="button" class="btn btn-primary mr-2" value="Submit">
-                                                  </div>
-                                                  
-                                              </div>
-                                          </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Levi's Modal -->
+                        <div class="col-lg-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                    <h1 class="display-2 text-primary"><span
+                                            class="ion ion-ios-tablet-portrait-outline"></span></h1>
+                                    <h4 class="card-title text-primary">Already Have a <strong>Movie</strong>?</h4>
+                                    <p class="card-text"></p>
+                                    <!-- Levi's Modal Button in the third card -->
+                                    <button class="btn btn-primary mt-auto" id="leviBtn">Find Food</button>
+                                    <div id="leviForm" class="modal">
+                                        <!-- Levi's Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close3">&times;</span>
+                                            <section id="forms" class="container pb-10">
+                                                <div class="row">
+                                                    <form role="form">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-12">
+                                                                <input id="lStreet" class="form-control" type="text"
+                                                                    placeholder="Street">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-5">
+                                                                <input id="lCity" class="form-control" type="text"
+                                                                    placeholder="City">
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <select id="lState" class="form-control">
+                                                                    <option value="" disabled selected>State</option>
+                                                                    <option value="AL">AL</option>
+                                                                    <option value="AK">AK</option>
+                                                                    <option value="AZ">AZ</option>
+                                                                    <option value="AR">AR</option>
+                                                                    <option value="CA">CA</option>
+                                                                    <option value="CO">CO</option>
+                                                                    <option value="CT">CT</option>
+                                                                    <option value="DE">DE</option>
+                                                                    <option value="DC">DC</option>
+                                                                    <option value="FL">FL</option>
+                                                                    <option value="GA">GA</option>
+                                                                    <option value="HI">HI</option>
+                                                                    <option value="ID">ID</option>
+                                                                    <option value="IL">IL</option>
+                                                                    <option value="IN">IN</option>
+                                                                    <option value="IA">IA</option>
+                                                                    <option value="KS">KS</option>
+                                                                    <option value="KY">KY</option>
+                                                                    <option value="LA">LA</option>
+                                                                    <option value="ME">ME</option>
+                                                                    <option value="MD">MD</option>
+                                                                    <option value="MA">MA</option>
+                                                                    <option value="MI">MI</option>
+                                                                    <option value="MN">MN</option>
+                                                                    <option value="MS">MS</option>
+                                                                    <option value="MO">MO</option>
+                                                                    <option value="MT">MT</option>
+                                                                    <option value="NE">NE</option>
+                                                                    <option value="NV">NV</option>
+                                                                    <option value="NH">NH</option>
+                                                                    <option value="NJ">NJ</option>
+                                                                    <option value="NM">NM</option>
+                                                                    <option value="NY">NY</option>
+                                                                    <option value="NC">NC</option>
+                                                                    <option value="ND">ND</option>
+                                                                    <option value="OH">OH</option>
+                                                                    <option value="OK">OK</option>
+                                                                    <option value="OR">OR</option>
+                                                                    <option value="PA">PA</option>
+                                                                    <option value="RI">RI</option>
+                                                                    <option value="SC">SC</option>
+                                                                    <option value="SD">SD</option>
+                                                                    <option value="TN">TN</option>
+                                                                    <option value="TX">TX</option>
+                                                                    <option value="UT">UT</option>
+                                                                    <option value="VT">VT</option>
+                                                                    <option value="VA">VA</option>
+                                                                    <option value="WA">WA</option>
+                                                                    <option value="WV">WV</option>
+                                                                    <option value="WI">WI</option>
+                                                                    <option value="WY">WY</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <input id="lZip" class="form-control" type="number"
+                                                                    placeholder="Zip">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="input-group">
+                                                                <select class="custom-select" id="lGenre"
+                                                                    aria-label="Example select with button addon">
+                                                                    <option selected>Choose Movie Genre..</option>
+                                                                    <option value="1">Action</option>
+                                                                    <option value="2">Comedy</option>
+                                                                    <option value="3">Romance</option>
+                                                                    <option value="4">Musical</option>
+                                                                    <option value="5">Rom-Com</option>
+                                                                    <option value="6">Horror</option>
+                                                                    <option value="7">Drama</option>
+                                                                    <option value="8">Documentary</option>
+                                                                    <option value="9">Animation</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row" id="modalButtons">
+                                                            <div>
+                                                                <input type="reset"
+                                                                    class="btn btn-outline-secondary mr-2"
+                                                                    value="Cancel">
+                                                                <input type="button" id="leviSubmit"
+                                                                    class="btn btn-primary mr-2" value="Submit">
+                                                            </div>
+
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </section>
                                         </div>
                                       </section>
                                   </div>
@@ -557,16 +561,39 @@
       </div>
   </section>
   </main>
->>>>>>> 9b5095638f149a6bf53aba61a712b1f15aec5cdf
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 my-auto">
+                <div class="row text-center">
+                    <!-- User display form -->
+                    <div class="col-lg-12">
+                        <div class="card h-100" id="resultsForm">
+                            <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                <h1 class="display-2 text-primary"><span class="ion ion-ios-snow-outline"></span>
+                                </h1>
+                                <h4 class="card-title text-primary">Get <strong>LAID</strong>!</h4>
+                                <p class="card-text" id="jsonResponse"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
-  </section>
+    </section>
 </body>
 
 </html>
