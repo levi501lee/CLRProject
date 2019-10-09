@@ -9,7 +9,7 @@
     <meta charset="utf-8">
 
     <!-- Flavicon -->
-    <link rel="shortcut icon" sizes="32X32" href="favicon_heart.ico">
+    <link rel="shortcut icon" sizes="32X32" href="favicon.ico">
 
     <!--Reset CSS-->
     <link rel="stylesheet" href="assets/css/reset.css">
@@ -20,8 +20,8 @@
     <!-- Vendor Stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700%7CRoboto:300,400,700" rel="stylesheet">
     <link href="assets/css/material-design-iconic-font.css" rel="stylesheet">
-    <link href="../assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <link href="../assets/vendor/aos/dist/aos.css" rel="stylesheet">
+    <link href="assets/css/fontawesome-all.css" rel="stylesheet">
+    <link href="assets/css/aos.css" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -59,6 +59,27 @@
         </div>
     </header>
     <!-- End of Header -->
+
+    <!-- <div class="container" id="nav-container">   
+  <nav class="navbar navbar-expand-lg transparent">
+    <a class="navbar-brand" href="#">Taste in Movies</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto col-sm-9 col-md-9 col-lg-9 col-xl-9">
+        <li class="nav-item">
+          <a class="nav-link" href="#">info@tasteinmovies.com</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">1(801)555-5555</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>  -->
     <main>
         <!-- <section>
     Trigger/Open The Modal
@@ -170,7 +191,7 @@
     </div>
   </section> -->
         <section class="container">
-            <div class="row vh-100">
+            <div class="row vh-75" id="main-row">
                 <div class="col-12 my-auto">
                     <div class="row text-center">
                         <!-- getLaid -->
@@ -446,7 +467,7 @@
                                             <span class="close3">&times;</span>
                                             <section id="forms" class="container pb-10">
                                                 <div class="row">
-                                                    <form role="form">
+                                                    <form role="form" id='modalForm'>
                                                         <div class="form-group row">
                                                             <div class="col-sm-12">
                                                                 <input id="lStreet" class="form-control" type="text"
@@ -516,12 +537,135 @@
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <input id="lZip" class="form-control" type="number"
+                                                                    placeholder="Zip" onblur="checkZipCode()"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="input-group">
+                                                                <input id="lGenre" class="form-control" type="text" placeholder="Enter movie title..">
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row" id="modalButtons">
+                                                            <div>
+                                                                <input type="reset"
+                                                                    class="btn btn-outline-secondary mr-2"
+                                                                    value="Cancel">
+                                                                <input type="button" id="leviSubmit"
+                                                                    class="btn btn-primary mr-2" value="Submit">
+                                                            </div>
+                                                        <div id="errorMsgContainer"></div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </section>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row vh-100" id="content-row">
+                <div class="col-12 my-auto">
+                    <div class="row text-center">
+                        <!-- getLaid -->
+                        <div class="col-lg-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                                    <h1 class="display-2 text-primary"><span class="ion ion-ios-snow-outline"></span>
+                                    </h1>
+                                    <h4 class="card-title text-primary">Get <strong>LAID</strong>!</h4>
+                                    <p class="card-text">Our Get Laid option will provide you and your date with a will
+                                        matched movie and dinner option based on the likes of your date.</p>
+                                    <!-- Modal Button in the first card -->
+                                    <button class="btn btn-primary btn-get-laid mt-auto" id="getLaidBtn">Feeling
+                                        Lucky</button>
+                                    <!-- The Modal -->
+                                    <div id="getLaidForm" class="modal">
+                                        <!-- Modal content -->
+                                        <div class="modal-content">
+                                            <span class="close1">&times;</span>
+                                            <section id="forms" class="container pb-10">
+                                                <div class="row">
+                                                    <form role="form">
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-12">
+                                                                <input id="glStreet" class="form-control" type="text"
+                                                                    placeholder="Street">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-sm-5">
+                                                                <input id="glCity" class="form-control" type="text"
+                                                                    placeholder="City">
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <select id="glState" class="form-control"
+                                                                    aria-placeholder="State">
+                                                                    <option value="" disabled selected>St</option>
+                                                                    <option value="AL">AL</option>
+                                                                    <option value="AK">AK</option>
+                                                                    <option value="AZ">AZ</option>
+                                                                    <option value="AR">AR</option>
+                                                                    <option value="CA">CA</option>
+                                                                    <option value="CO">CO</option>
+                                                                    <option value="CT">CT</option>
+                                                                    <option value="DE">DE</option>
+                                                                    <option value="DC">DC</option>
+                                                                    <option value="FL">FL</option>
+                                                                    <option value="GA">GA</option>
+                                                                    <option value="HI">HI</option>
+                                                                    <option value="ID">ID</option>
+                                                                    <option value="IL">IL</option>
+                                                                    <option value="IN">IN</option>
+                                                                    <option value="IA">IA</option>
+                                                                    <option value="KS">KS</option>
+                                                                    <option value="KY">KY</option>
+                                                                    <option value="LA">LA</option>
+                                                                    <option value="ME">ME</option>
+                                                                    <option value="MD">MD</option>
+                                                                    <option value="MA">MA</option>
+                                                                    <option value="MI">MI</option>
+                                                                    <option value="MN">MN</option>
+                                                                    <option value="MS">MS</option>
+                                                                    <option value="MO">MO</option>
+                                                                    <option value="MT">MT</option>
+                                                                    <option value="NE">NE</option>
+                                                                    <option value="NV">NV</option>
+                                                                    <option value="NH">NH</option>
+                                                                    <option value="NJ">NJ</option>
+                                                                    <option value="NM">NM</option>
+                                                                    <option value="NY">NY</option>
+                                                                    <option value="NC">NC</option>
+                                                                    <option value="ND">ND</option>
+                                                                    <option value="OH">OH</option>
+                                                                    <option value="OK">OK</option>
+                                                                    <option value="OR">OR</option>
+                                                                    <option value="PA">PA</option>
+                                                                    <option value="RI">RI</option>
+                                                                    <option value="SC">SC</option>
+                                                                    <option value="SD">SD</option>
+                                                                    <option value="TN">TN</option>
+                                                                    <option value="TX">TX</option>
+                                                                    <option value="UT">UT</option>
+                                                                    <option value="VT">VT</option>
+                                                                    <option value="VA">VA</option>
+                                                                    <option value="WA">WA</option>
+                                                                    <option value="WV">WV</option>
+                                                                    <option value="WI">WI</option>
+                                                                    <option value="WY">WY</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-4">
+                                                                <input id="glZip" class="form-control" type="number"
                                                                     placeholder="Zip">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
                                                             <div class="input-group">
-                                                                <select class="custom-select" id="lGenre"
+                                                                <select class="custom-select" id="glGenre"
                                                                     aria-label="Example select with button addon">
                                                                     <option selected>Choose Movie Genre..</option>
                                                                     <option value="1">Action</option>
@@ -539,10 +683,11 @@
                                                         <div class="form-group row" id="modalButtons">
                                                             <div>
                                                                 <input type="reset"
-                                                                    class="btn btn-outline-secondary mr-2"
+                                                                    class="btn btn-cancel btn-outline-secondary mr-2"
                                                                     value="Cancel">
-                                                                <input type="button" id="leviSubmit"
-                                                                    class="btn btn-primary mr-2" value="Submit">
+                                                                <input type="button" id="getLaidSubmit"
+                                                                    class="btn btn-submit btn-primary mr-2"
+                                                                    value="Submit">
                                                             </div>
 
                                                         </div>
@@ -550,34 +695,8 @@
                                                 </div>
                                             </section>
                                         </div>
-                                      </section>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
-  </main>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 my-auto">
-                <div class="row text-center">
-                    <!-- User display form -->
-                    <div class="col-lg-12">
-                        <div class="card h-100" id="resultsForm">
-                            <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                                <h1 class="display-2 text-primary"><span class="ion ion-ios-snow-outline"></span>
-                                </h1>
-                                <h4 class="card-title text-primary">Get <strong>LAID</strong>!</h4>
-                                <p class="card-text" id="jsonResponse"></p>
                             </div>
                         </div>
                     </div>
@@ -593,6 +712,8 @@
         crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/aos.js"></script>
+    <script src="assets/javascript/form-validations.js"></script>
     </section>
 </body>
 
