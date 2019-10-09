@@ -71,8 +71,8 @@
                                     <h1 class="display-2 text-primary"><span class="ion ion-ios-snow-outline"></span>
                                     </h1>
                                     <h4 class="card-title text-primary">Get <strong>LAID</strong>!</h4>
-                                    <p class="card-text">Our Get Laid option will provide you and your date with a will
-                                        matched movie and dinner option based on the likes of your date.</p>
+                                    <p class="card-text">Our Get Laid option will provide you and your date with a well
+                                        matched dinner option based on your taste in movies.</p>
                                     <!-- Modal Button in the first card -->
                                     <button class="btn btn-primary btn-get-laid mt-auto" id="getLaidBtn">Feeling
                                         Lucky</button>
@@ -159,24 +159,43 @@
                                                         </div>
                                                         <div class="form-group row">
                                                             <div class="input-group">
-                                                                <select class="custom-select" id="glGenre"
+                                                                <div class="input-group">
+                                                                    <input id="glMovieTitle" class="form-control" type="text" placeholder="Enter movie title..">
+                                                                    </select>
+                                                                </div>
+                                                                <!-- <select class="custom-select" id="glGenre"
                                                                     aria-label="Example select with button addon">
                                                                     <option selected>Choose Movie Genre..</option>
                                                                     <option value="1">Action</option>
-                                                                    <option value="2">Comedy</option>
-                                                                    <option value="3">Romance</option>
-                                                                    <option value="4">Musical</option>
-                                                                    <option value="5">Rom-Com</option>
-                                                                    <option value="6">Horror</option>
-                                                                    <option value="7">Drama</option>
-                                                                    <option value="8">Documentary</option>
-                                                                    <option value="9">Animation</option>
-                                                                </select>
+                                                                    <option value="2">Adventure</option>
+                                                                    <option value="3">Animation</option>
+                                                                    <option value="4">Biography</option>
+                                                                    <option value="5">Comedy</option>
+                                                                    <option value="6">Crime</option>
+                                                                    <option value="7">Documentary</option>
+                                                                    <option value="8">Drame</option>
+                                                                    <option value="9">Family</option>
+                                                                    <option value="10">Fantasy</option>
+                                                                    <option value="11">Film Noir</option>
+                                                                    <option value="12">History</option>
+                                                                    <option value="13">Horror</option>
+                                                                    <option value="14">Music</option>
+                                                                    <option value="15">Musical</option>
+                                                                    <option value="16">Mystery</option>
+                                                                    <option value="17">Romance</option>
+                                                                    <option value="18">Sci-Fi</option>
+                                                                    <option value="19">Short Film</option>
+                                                                    <option value="20">Sport</option>
+                                                                    <option value="21">Superhero</option>
+                                                                    <option value="22">Thriller</option>
+                                                                    <option value="23">War</option>
+                                                                    <option value="24">Western</option>
+                                                                </select> -->
                                                             </div>
                                                         </div>
                                                         <div class="form-group row" id="modalButtons">
                                                             <div>
-                                                                <input type="reset"
+                                                                <input type="reset" id="getLaidCancel"
                                                                     class="btn btn-cancel btn-outline-secondary mr-2"
                                                                     value="Cancel">
                                                                 <input type="button" id="getLaidSubmit"
@@ -285,30 +304,46 @@
                                                         </div>
                                                         <div class="form-group row">
                                                             <div class="input-group">
-                                                                <select class="custom-select" id="wdGenre"
+                                                                <input id="lGenre" class="form-control" type="text" placeholder="Enter movie title..">
+                                                                </select>
+                                                            </div>
+                                                            <!-- <select class="custom-select" id="wdGenre"
                                                                     aria-label="Example select with button addon">
                                                                     <option selected>Choose Movie Genre..</option>
                                                                     <option value="1">Action</option>
-                                                                    <option value="2">Comedy</option>
-                                                                    <option value="3">Romance</option>
-                                                                    <option value="4">Musical</option>
-                                                                    <option value="5">Rom-Com</option>
-                                                                    <option value="6">Horror</option>
-                                                                    <option value="7">Drama</option>
-                                                                    <option value="8">Documentary</option>
-                                                                    <option value="9">Animation</option>
-                                                                </select>
-                                                            </div>
+                                                                    <option value="2">Adventure</option>
+                                                                    <option value="3">Animation</option>
+                                                                    <option value="4">Biography</option>
+                                                                    <option value="5">Comedy</option>
+                                                                    <option value="6">Crime</option>
+                                                                    <option value="7">Documentary</option>
+                                                                    <option value="8">Drame</option>
+                                                                    <option value="9">Family</option>
+                                                                    <option value="10">Fantasy</option>
+                                                                    <option value="11">Film Noir</option>
+                                                                    <option value="12">History</option>
+                                                                    <option value="13">Horror</option>
+                                                                    <option value="14">Music</option>
+                                                                    <option value="15">Musical</option>
+                                                                    <option value="16">Mystery</option>
+                                                                    <option value="17">Romance</option>
+                                                                    <option value="18">Sci-Fi</option>
+                                                                    <option value="19">Short Film</option>
+                                                                    <option value="20">Sport</option>
+                                                                    <option value="21">Superhero</option>
+                                                                    <option value="22">Thriller</option>
+                                                                    <option value="23">War</option>
+                                                                    <option value="24">Western</option>
+                                                                </select> -->
                                                         </div>
                                                         <div class="form-group row" id="modalButtons">
                                                             <div>
-                                                                <input type="reset"
+                                                                <input type="reset" id="worstDateCancel"
                                                                     class="btn btn-outline-secondary mr-2"
                                                                     value="Cancel">
                                                                 <input type="button" id="worstDateSubmit"
                                                                     class="btn btn-primary mr-2" value="Submit">
                                                             </div>
-
                                                         </div>
                                                     </form>
                                                 </div>
@@ -404,7 +439,7 @@
                                                             </div>
                                                             <div class="col-sm-4">
                                                                 <input id="lZip" class="form-control" type="number"
-                                                                    placeholder="Zip" onblur="checkZipCode()"/>
+                                                                    placeholder="Zip"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">
@@ -415,7 +450,7 @@
                                                         </div>
                                                         <div class="form-group row" id="modalButtons">
                                                             <div>
-                                                                <input type="reset"
+                                                                <input type="reset" id="leviCancel"
                                                                     class="btn btn-outline-secondary mr-2"
                                                                     value="Cancel">
                                                                 <input type="button" id="leviSubmit"
@@ -438,14 +473,31 @@
     </main>
   <div class="col-12 my-auto">
         <div class="row text-center">
-            <!-- User display form -->
-            <div class="col-lg-12">
-                <div class="card h-100" id="resultsForm">
-                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
-                        <h1 class="display-2 text-primary"><span class="ion ion-ios-snow-outline"></span>
-                        </h1>
-                        <h4 class="card-title text-primary"></h4>
-                        <p class="card-text" id="jsonResponse"></p>
+            <!-- User display form Wireframe for results-->
+            <div id="resultsForm">
+                <div class="col-sm-6">
+                    <div class="card" id=movieResults>
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                            <img id="moviePoster">
+                            <h1 class="display-2 text-primary" id="movieTitle"></h1>
+                            <h4 class="card-title text-primary" id="movieRating"></h4>
+                            <h4 class="card-title text-primary" id="movieTxt"></h4>
+                            <p class="card-text" id="jsonResponse"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card" id=foodResults>
+                        <img id="foodPoster">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">        
+                            <h1 class="display-2 text-primary" id="foodName"></h1>
+                            <h4 class="card-title text-primary" id="foodAddress"></h4>
+                            <h4 class="card-title text-primary" id="foodCity"></h4>
+                            <h4 class="card-title text-primary" id="foodState"></h4>
+                            <h4 class="card-title text-primary" id="foodZip"></h4>
+                            <h4 class="card-title text-primary" id="foodPhone"></h4>
+                            <p class="card-text" id="jsonResponse"></p>
+                        </div>
                     </div>
                 </div>
             </div>
