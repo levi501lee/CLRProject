@@ -200,82 +200,76 @@ window.onclick = function (event) {
 
 /////////////////////////API////////////////////////////////////////////
 
-  // Click event for the "get laid" modal submit button
-  $('#getLaidSubmit').on('click', (event) => { modalClickEvent(event, "gl"); });
-  // CLick event for the "worst date" modal submit button
-  $('#worstDateSubmit').on('click', (event) => { modalClickEvent(event, "wd"); });
+// Click event for the "get laid" modal submit button
+$('#getLaidSubmit').on('click', (event) => { modalClickEvent(event, "gl"); });
+// CLick event for the "worst date" modal submit button
+$('#worstDateSubmit').on('click', (event) => { modalClickEvent(event, "wd"); });
 
-  // Handles the API calls for the first 2 modal forms
-  function modalClickEvent(e, modalRef) {
+// Handles the API calls for the first 2 modal forms
+function modalClickEvent(e, modalRef) {
 
-    e.preventDefault();
+  e.preventDefault();
 
-    // Pass user values from the DOM
-    streetVal = $('#' + modalRef + 'Street').val().trim();
-    cityVal = $('#' + modalRef + 'City').val().trim();
-    stateVal = $('#' + modalRef + 'State').val().trim();
-    zipVal = $('#' + modalRef + 'Zip').val().trim();
+  // Pass user values from the DOM
+  let streetVal = $('#' + modalRef + 'Street').val().trim();
+  let cityVal = $('#' + modalRef + 'City').val().trim();
+  let stateVal = $('#' + modalRef + 'State').val().trim();
+  let zipVal = $('#' + modalRef + 'Zip').val().trim();
 
-    console.log(streetVal);
-    console.log(cityVal);
-    console.log(stateVal);
-    console.log(zipVal);
-    // Remove the error statement
-    if ('#errorMsgContainer') { $('#errorMsgContainer').reset(); }
+  console.log(streetVal);
+  console.log(cityVal);
+  console.log(stateVal);
+  console.log(zipVal);
+  // Remove the error statement
+  if ('.error') { $('.error').remove(); }
 
-    // Validity check for user input
-    if (streetVal.length < 1) {
-      $('#errorMsgContainer').append('<span class=" error">The STREET field is required</span>');
-    }
-    if (cityVal.length < 1) {
-      $('#errorMsgContainer').append('<span class=" error">The CITY field is required</span>');
-    }
-    if (stateVal.length < 1) {
-      $('#errorMsgContainer').append('<span class=" error">The STATE field is required</span>');
-    }
-    if (zipVal.length != 5) {
-      $('#errorMsgContainer').append('<span class=" error">The ZIP Code must be 5 digits long</span>');
-    }
-
-    // Here we grab the text from the input box
-    let cityState = city + "," + state;
-
-    // AJAX call for MapQuest API, inserting the city and state for the query
-    $.ajax({
-      url: 'http://www.mapquestapi.com/geocoding/v1/address?key=DFacdC8YGDXMAokPqwGxGK7PSTV8xHSI' + '&location=' + cityState,
-      method: 'GET'
-    }).then((response) => {
-      $('#jsonResponse').text(JSON.stringify(response));
-      lat = response.results[0].locations[0].latLng.lat;
-      lng = response.results[0].locations[0].latLng.lng;
-      let latLng = 'https://api.yelp.com/v3/businesses/search?text=restaurant&latitude=' + lat + '&longitude=' + lng;
-      var cors = 'https://cors-anywhere.herokuapp.com/';
-
-      // AJAX to reference Yelp! and pass the latLng so we can retrieve restaurant data
-      $.ajax({
-        url: cors + latLngURL,
-        method: "GET",
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Authorization": "Bearer 5psQHIfkM7fl7doyCrG3wpQjmW2BoXwXIuMbP6mXcCzg9nalp5PiQ9p6NNcMdCe81V1sGg52yZRGH7OPUoL0o_9oPv1yDPV08swWpK0PQ962x3COTKeABdapYMeSXXYx"
-        },
-      }).then((response) => {
-
-        for (let i = 0; i < response.businesses.length; i++) {
-          var rating = response.businesses[i].rating;
-          var establishment = response.businesses[i].name;
-          var url = response.businesses[i].url;
-
-          console.log(rating);
-          console.log(establishment);
-          console.log(url);
-        }
-      });
-    });
-
-    console.log('lat: ' + lat);
-    console.log('lng: ' + lng);
-
-
-
+  // Validity check for user input
+  if (streetVal.length < 1) {
+    $('#errorMsgContainer').append('<span class=" error">The STREET field is required</span>');
   }
+  if (cityVal.length < 1) {
+    $('#errorMsgContainer').append('<span class=" error">The CITY field is required</span>');
+  }
+  if (stateVal.length < 1) {
+    $('#errorMsgContainer').append('<span class=" error">The STATE field is required</span>');
+  }
+  if (zipVal.length != 5) {
+    $('#errorMsgContainer').append('<span class=" error">The ZIP Code must be 5 digits long</span>');
+  }
+
+  // Here we grab the text from the input box
+  let cityState = city + "," + state;
+
+  // AJAX call for MapQuest API, inserting the city and state for the query
+  $.ajax({
+    url: 'http://www.mapquestapi.com/geocoding/v1/address?key=DFacdC8YGDXMAokPqwGxGK7PSTV8xHSI' + '&location=' + cityState,
+    method: 'GET'
+  }).then((response) => {
+    $('#jsonResponse').text(JSON.stringify(response));
+    let lat = response.results[0].locations[0].latLng.lat;
+    let lng = response.results[0].locations[0].latLng.lng;
+    let latLngURL = 'https://api.yelp.com/v3/businesses/search?text=restaurant&latitude=' + lat + '&longitude=' + lng;
+    let cors = 'https://cors-anywhere.herokuapp.com/';
+    
+    // AJAX to reference Yelp! and pass the latLng so we can retrieve restaurant data
+    $.ajax({
+      url: cors + latLngURL,
+      method: "GET",
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Authorization": "Bearer jvAnEan6_NDe82bFMxKAxFB-uW__ZUQqDpYnw4pM4FB93jAh9kZpTDlRa4tL0GmZ6kbLVbGcumgzs0oDEjSozUI9VRPB07LimgLpCBMtVtpN-A_aadIkZM2lGFSdXXYx"
+      },
+    }).then((response) => {
+
+      for (let i = 0; i < response.businesses.length; i++) {
+        let rating = response.businesses[i].rating;
+        let establishment = response.businesses[i].name;
+        let url = response.businesses[i].url;
+
+        console.log(rating);
+        console.log(establishment);
+        console.log(url);
+      }
+    });
+  });
+}
