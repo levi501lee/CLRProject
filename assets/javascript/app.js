@@ -2,31 +2,12 @@
 // Authorization and modal functionality javascript for Taste in Movies
 // backend.js
 
-//////////////////////////FRONT-END FUNCTIONALITY/////////////////////////////////////
-$('#btn-start').mouseover(function () {
 
-  var name = "";
-
-  $(".btn-start").hover(function () {
-    name = $(this).attr("#btn-start");
-    $(this).stop().show().animate({ opacity: 1 });
-  }, function () {
-    name = $(this).attr("id");
-    $("#image-" + name).stop().animate({ opacity: 0 });
-  });
-
-});
-
-// Dynamically creates the form to display user results
-function displayForm() {
-
-  let newDiv = $('');
-}
 
 /////////////////////////////FIREBASE///////////////////////////////////////////////////////
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+let firebaseConfig = {
   apiKey: "AIzaSyD-2KTAIkrBfmuFq30tQ0OnpbrMRbCebYs",
   authDomain: "taste-in-movies.firebaseapp.com",
   databaseURL: "https://taste-in-movies.firebaseio.com",
@@ -83,18 +64,6 @@ database.ref().on("value", function (snapshot) {
     $('#isGetLaid').text(isGetLaid);
     $('#isWorstDate').text(isWorstDate);
     $('#isFoodToo').text(isFoodToo);
-
-    // Print the data to the console.
-    // console.log("street " + street);
-    // console.log("city " + city);
-    // console.log("state " + state);
-    // console.log("zip " + zip);
-    // console.log("genre " + genre);
-    // console.log("movieTitle " + movieTitle);
-    // console.log("metaScore " + metaScore);
-    // console.log("isGetLaid " + isGetLaid);
-    // console.log("isWorstDate " + isWorstDate);
-    // console.log("isFoodToo " + isFoodToo);
   }
   // If any errors are experienced, log them to console.
 }, function (errorObject) {
@@ -111,9 +80,9 @@ const worstDateForm = document.querySelector('#worstDateForm');
 const leviForm = document.querySelector('#leviForm');
 
 // Pass the user values when clicked
-$('#getLaidSubmit').on('click', function () { getUserValues('#gl'); });
-$('#worstDateSubmit').on('click', function () { getUserValues('#wd'); });
-$('#leviSubmit').on('click', function () {
+$('#getLaidSubmit').on('click', () => { getUserValues('#gl'); });
+$('#worstDateSubmit').on('click', () => { getUserValues('#wd'); });
+$('#leviSubmit').on('click', () => {
   //
 });
 
@@ -146,11 +115,10 @@ function getUserValues(prefix) {
     zip: zip,
     genre: genre
   });
-
-  //displayForm();
 }
 
 // 1st Modal ("Get Laid")
+
 var modal1 = document.getElementById("getLaidForm");
 var btn1 = document.getElementById("getLaidBtn");
 var span1 = document.getElementsByClassName("close1")[0];
@@ -175,6 +143,8 @@ window.onclick = function (event) {
 }
 
 // 2nd Modal ("Worst Date")
+
+
 var modal2 = document.getElementById("worstDateForm");
 var btn2 = document.getElementById("worstDateBtn");
 var span2 = document.getElementsByClassName("close2")[0];
@@ -225,6 +195,7 @@ window.onclick = function (event) {
 
 /////////////////////////API////////////////////////////////////////////
 
+// Converts a movie's meta score into a 5-star rating
 function movieRating() { return Math.floor(metaScore / 20); }
 
 // Click event for the "get laid" modal submit button
@@ -288,6 +259,61 @@ function modalClickEvent(e, modalRef) {
       },
     }).then((response) => {
 
+      let movie = $('#movieTitle').val().trim();
+      let queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=5d3eba7a";
+
+      // AJAX to reference OMDB to find a movie based on title selected
+      $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then((response) => {
+
+        // Creating a div to hold the movie
+        var movieDiv = $("<div class='movie'>");
+
+        // Storing the rating data
+        let rating = response.Rated;
+
+        // Creating an element to have the rating displayed
+        var pOne = $("<p>").text("Rating: " + rating);
+
+        // Displaying the rating
+        movieDiv.append(pOne);
+
+        // Storing the release year
+        var released = response.Released;
+
+        // Creating an element to hold the release year
+        var pTwo = $("<p>").text("Released: " + released);
+
+        // Displaying the release year
+        movieDiv.append(pTwo);
+
+        // Storing the plot
+        var plot = response.Plot;
+
+        // Creating an element to hold the plot
+        var pThree = $("<p>").text("Plot: " + plot);
+
+        // Appending the plot
+        movieDiv.append(pThree);
+
+
+        // Retrieving the URL for the image
+        var imgURL = response.Poster;
+
+        // Creating an element to hold the image
+        var image = $("<img>").attr("src", imgURL);
+
+        // Appending the image
+        movieDiv.append(image);
+
+        // Putting the entire movie above the previous movies
+        $("#movies-view").prepend(movieDiv);
+
+
+      });
+
       // Random index returned from matched restaurant ratings within the loop below
       let indexArr = Array.from({ length: response.businesses.length }, () => Math.floor(Math.random() * 20) + 1);
 
@@ -302,12 +328,12 @@ function modalClickEvent(e, modalRef) {
         let yelpStreet = response.businesses[i].location.address1;
         let yelpCity = response.businesses[i].location.city;
         let yelpState = response.businesses[i].location.state;
-        let yelpZip = response.businesses[i].locationl.zip_code;
+        let yelpZip = response.businesses[i].location.zip_code;
 
         // See if current restaurant's rating matches the movie's rating
         if (movieRating() === yelpRating) {
 
-          
+
         }
       }
     });
