@@ -200,6 +200,8 @@ window.onclick = function (event) {
 
 /////////////////////////API////////////////////////////////////////////
 
+function movieRating() { return Math.floor(metaScore / 20); }
+
 // Click event for the "get laid" modal submit button
 $('#getLaidSubmit').on('click', (event) => { modalClickEvent(event, "gl"); });
 // CLick event for the "worst date" modal submit button
@@ -250,7 +252,7 @@ function modalClickEvent(e, modalRef) {
     let lng = response.results[0].locations[0].latLng.lng;
     let latLngURL = 'https://api.yelp.com/v3/businesses/search?text=restaurant&latitude=' + lat + '&longitude=' + lng;
     let cors = 'https://cors-anywhere.herokuapp.com/';
-    
+
     // AJAX to reference Yelp! and pass the latLng so we can retrieve restaurant data
     $.ajax({
       url: cors + latLngURL,
@@ -261,14 +263,27 @@ function modalClickEvent(e, modalRef) {
       },
     }).then((response) => {
 
-      for (let i = 0; i < response.businesses.length; i++) {
-        let rating = response.businesses[i].rating;
-        let establishment = response.businesses[i].name;
-        let url = response.businesses[i].url;
+      // Random index returned from matched restaurant ratings within the loop below
+      let indexArr = Array.from({ length: response.businesses.length }, () => Math.floor(Math.random() * 20) + 1);
 
-        console.log(rating);
-        console.log(establishment);
-        console.log(url);
+      // Loop through the 20 restaurants returned from the API to find the match
+      for (let i = 0; i < response.businesses.length; i++) {
+
+        let yelpRating = response.businesses[i].rating;
+        let yelpEstablishment = response.businesses[i].name;
+        let yelpUrl = response.businesses[i].url;
+        let yelpImage = response.businesses[i].image_url;
+        let yelpPhone = response.businesses[i].phone;
+        let yelpStreet = response.businesses[i].location.address1;
+        let yelpCity = response.businesses[i].location.city;
+        let yelpState = response.businesses[i].location.state;
+        let yelpZip = response.businesses[i].locationl.zip_code;
+
+        // See if current restaurant's rating matches the movie's rating
+        if (movieRating() === yelpRating) {
+
+          
+        }
       }
     });
   });
