@@ -71,8 +71,8 @@
                                     <h1 class="display-2 text-primary"><span class="ion ion-ios-snow-outline"></span>
                                     </h1>
                                     <h4 class="card-title text-primary">Get <strong>LAID</strong>!</h4>
-                                    <p class="card-text">Our Get Laid option will provide you and your date with a will
-                                        matched movie and dinner option based on the likes of your date.</p>
+                                    <p class="card-text">Our Get Laid option will provide you and your date with a well
+                                        matched dinner option based on your taste in movies.</p>
                                     <!-- Modal Button in the first card -->
                                     <button class="btn btn-primary btn-get-laid mt-auto" id="getLaidBtn">Feeling
                                         Lucky</button>
@@ -159,19 +159,38 @@
                                                         </div>
                                                         <div class="form-group row">
                                                             <div class="input-group">
-                                                                <select class="custom-select" id="glGenre"
+                                                                <div class="input-group">
+                                                                    <input id="glMovieTitle" class="form-control" type="text" placeholder="Enter movie title..">
+                                                                    </select>
+                                                                </div>
+                                                                <!-- <select class="custom-select" id="glGenre"
                                                                     aria-label="Example select with button addon">
                                                                     <option selected>Choose Movie Genre..</option>
                                                                     <option value="1">Action</option>
-                                                                    <option value="2">Comedy</option>
-                                                                    <option value="3">Romance</option>
-                                                                    <option value="4">Musical</option>
-                                                                    <option value="5">Rom-Com</option>
-                                                                    <option value="6">Horror</option>
-                                                                    <option value="7">Drama</option>
-                                                                    <option value="8">Documentary</option>
-                                                                    <option value="9">Animation</option>
-                                                                </select>
+                                                                    <option value="2">Adventure</option>
+                                                                    <option value="3">Animation</option>
+                                                                    <option value="4">Biography</option>
+                                                                    <option value="5">Comedy</option>
+                                                                    <option value="6">Crime</option>
+                                                                    <option value="7">Documentary</option>
+                                                                    <option value="8">Drame</option>
+                                                                    <option value="9">Family</option>
+                                                                    <option value="10">Fantasy</option>
+                                                                    <option value="11">Film Noir</option>
+                                                                    <option value="12">History</option>
+                                                                    <option value="13">Horror</option>
+                                                                    <option value="14">Music</option>
+                                                                    <option value="15">Musical</option>
+                                                                    <option value="16">Mystery</option>
+                                                                    <option value="17">Romance</option>
+                                                                    <option value="18">Sci-Fi</option>
+                                                                    <option value="19">Short Film</option>
+                                                                    <option value="20">Sport</option>
+                                                                    <option value="21">Superhero</option>
+                                                                    <option value="22">Thriller</option>
+                                                                    <option value="23">War</option>
+                                                                    <option value="24">Western</option>
+                                                                </select> -->
                                                             </div>
                                                         </div>
                                                         <div class="form-group row" id="modalButtons">
@@ -285,20 +304,37 @@
                                                         </div>
                                                         <div class="form-group row">
                                                             <div class="input-group">
-                                                                <select class="custom-select" id="wdGenre"
+                                                                <input id="lGenre" class="form-control" type="text" placeholder="Enter movie title..">
+                                                                </select>
+                                                            </div>
+                                                            <!-- <select class="custom-select" id="wdGenre"
                                                                     aria-label="Example select with button addon">
                                                                     <option selected>Choose Movie Genre..</option>
                                                                     <option value="1">Action</option>
-                                                                    <option value="2">Comedy</option>
-                                                                    <option value="3">Romance</option>
-                                                                    <option value="4">Musical</option>
-                                                                    <option value="5">Rom-Com</option>
-                                                                    <option value="6">Horror</option>
-                                                                    <option value="7">Drama</option>
-                                                                    <option value="8">Documentary</option>
-                                                                    <option value="9">Animation</option>
-                                                                </select>
-                                                            </div>
+                                                                    <option value="2">Adventure</option>
+                                                                    <option value="3">Animation</option>
+                                                                    <option value="4">Biography</option>
+                                                                    <option value="5">Comedy</option>
+                                                                    <option value="6">Crime</option>
+                                                                    <option value="7">Documentary</option>
+                                                                    <option value="8">Drame</option>
+                                                                    <option value="9">Family</option>
+                                                                    <option value="10">Fantasy</option>
+                                                                    <option value="11">Film Noir</option>
+                                                                    <option value="12">History</option>
+                                                                    <option value="13">Horror</option>
+                                                                    <option value="14">Music</option>
+                                                                    <option value="15">Musical</option>
+                                                                    <option value="16">Mystery</option>
+                                                                    <option value="17">Romance</option>
+                                                                    <option value="18">Sci-Fi</option>
+                                                                    <option value="19">Short Film</option>
+                                                                    <option value="20">Sport</option>
+                                                                    <option value="21">Superhero</option>
+                                                                    <option value="22">Thriller</option>
+                                                                    <option value="23">War</option>
+                                                                    <option value="24">Western</option>
+                                                                </select> -->
                                                         </div>
                                                         <div class="form-group row" id="modalButtons">
                                                             <div>
@@ -308,7 +344,6 @@
                                                                 <input type="button" id="worstDateSubmit"
                                                                     class="btn btn-primary mr-2" value="Submit">
                                                             </div>
-
                                                         </div>
                                                     </form>
                                                 </div>
