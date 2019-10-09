@@ -154,10 +154,18 @@ function getUserValues(prefix) {
 var modal1 = document.getElementById("getLaidForm");
 var btn1 = document.getElementById("getLaidBtn");
 var span1 = document.getElementsByClassName("close1")[0];
+var glSubmit = document.getElementById("getLaidSubmit");
+var glCancel = document.getElementById("getLaidCancel");
 btn1.onclick = function () {
   modal1.style.display = "block";
 }
 span1.onclick = function () {
+  modal1.style.display = "none";
+}
+glSubmit.onclick = function () {
+  modal1.style.display = "none";
+}
+glCancel.onclick = function () {
   modal1.style.display = "none";
 }
 window.onclick = function (event) {
@@ -170,10 +178,18 @@ window.onclick = function (event) {
 var modal2 = document.getElementById("worstDateForm");
 var btn2 = document.getElementById("worstDateBtn");
 var span2 = document.getElementsByClassName("close2")[0];
+var wdSubmit = document.getElementById("worstDateSubmit");
+var wdCancel = document.getElementById("worstDateCancel");
 btn2.onclick = function () {
   modal2.style.display = "block";
 }
 span2.onclick = function () {
+  modal2.style.display = "none";
+}
+wdSubmit.onclick = function () {
+  modal2.style.display = "none";
+}
+wdCancel.onclick = function () {
   modal2.style.display = "none";
 }
 window.onclick = function (event) {
@@ -186,10 +202,18 @@ window.onclick = function (event) {
 var modal3 = document.getElementById("leviForm");
 var btn3 = document.getElementById("leviBtn");
 var span3 = document.getElementsByClassName("close3")[0];
+var lSubmit = document.getElementById("leviSubmit");
+var lCancel = document.getElementById("leviCancel");
 btn3.onclick = function () {
   modal3.style.display = "block";
 }
 span3.onclick = function () {
+  modal3.style.display = "none";
+}
+lSubmit.onclick = function () {
+  modal3.style.display = "none";
+}
+lCancel.onclick = function () {
   modal3.style.display = "none";
 }
 window.onclick = function (event) {
@@ -197,6 +221,7 @@ window.onclick = function (event) {
     modal3.style.display = "none";
   }
 }
+
 
 /////////////////////////API////////////////////////////////////////////
 
