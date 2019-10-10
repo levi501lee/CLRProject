@@ -24,7 +24,6 @@ let street = "";
 let city = "";
 let state = "";
 let zip = "";
-let genre = "";
 let movieTitle = "";
 let metaScore = "";
 let isGetLaid = false;
@@ -44,7 +43,6 @@ database.ref().on("value", function (snapshot) {
     city = snapshot.val().city;
     state = snapshot.val().state;
     zip = snapshot.val().zip;
-    genre = snapshot.val().genre;
     movieTitle = snapshot.val().movieTitle;
     metaScore = snapshot.val().metaScore;
     isGetLaid = snapshot.val().isGetLaid;
@@ -94,13 +92,12 @@ function getUserValues(prefix) {
   city = $(prefix + 'City').val().trim();
   state = $(prefix + 'State').val().trim();
   zip = $(prefix + 'Zip').val().trim();
-  genre = $(prefix + 'Genre').val().trim();
+  movieTitle = $(prefix + 'MovieTitle').val().trim();
 
   console.log("street " + street);
   console.log("city " + city);
   console.log("state " + state);
   console.log("zip " + zip);
-  console.log("genre " + genre);
   console.log("movieTitle " + movieTitle);
   console.log("metaScore " + metaScore);
   console.log("isGetLaid " + isGetLaid);
@@ -113,7 +110,7 @@ function getUserValues(prefix) {
     city: city,
     state: state,
     zip: zip,
-    genre: genre
+    title: movieTitle
   });
 }
 
@@ -213,6 +210,7 @@ function modalClickEvent(e, modalRef) {
   let cityVal = $('#' + modalRef + 'City').val().trim();
   let stateVal = $('#' + modalRef + 'State').val().trim();
   let zipVal = $('#' + modalRef + 'Zip').val().trim();
+  let movieTitle = $('#' + modalRef + 'MovieTitle').val().trim();
 
   console.log(streetVal);
   console.log(cityVal);
@@ -243,7 +241,7 @@ function modalClickEvent(e, modalRef) {
     url: 'http://www.mapquestapi.com/geocoding/v1/address?key=DFacdC8YGDXMAokPqwGxGK7PSTV8xHSI' + '&location=' + cityState,
     method: 'GET'
   }).then((response) => {
-    $('#jsonResponse').text(JSON.stringify(response));
+    //$('#jsonResponse').text(JSON.stringify(response));
     let lat = response.results[0].locations[0].latLng.lat;
     let lng = response.results[0].locations[0].latLng.lng;
     let latLngURL = 'https://api.yelp.com/v3/businesses/search?text=restaurant&latitude=' + lat + '&longitude=' + lng;
@@ -260,7 +258,8 @@ function modalClickEvent(e, modalRef) {
     }).then((response) => {
 
       let movie = $('#movieTitle').val().trim();
-      let queryURL = "https://www.omdbapi.com/?t=" + movie + "&apikey=5d3eba7a";
+      console.log('movie ' + movieTitle);
+      var queryURL = "https://www.omdbapi.com/?t=" + movieTitle + "&apikey=trilogy";
 
       // AJAX to reference OMDB to find a movie based on title selected
       $.ajax({
@@ -268,50 +267,28 @@ function modalClickEvent(e, modalRef) {
         method: "GET"
       }).then((response) => {
 
-        // Creating a div to hold the movie
-        var movieDiv = $("<div class='movie'>");
-
-        // Storing the rating data
+        // Storing the data
         let rating = response.Rated;
-
-        // Creating an element to have the rating displayed
-        var pOne = $("<p>").text("Rating: " + rating);
+        let title = response.Title;
+        let plot = response.Plot;
+        console.log(response);
+        console.log(rating);
+        console.log(title);
+        console.log(plot);
+        // Display the title
+        $('#movieTitle').text(movieTitle);
 
         // Displaying the rating
-        movieDiv.append(pOne);
+        $('#movieRating').text('Rated: ' + rating);
 
-        // Storing the release year
-        var released = response.Released;
-
-        // Creating an element to hold the release year
-        var pTwo = $("<p>").text("Released: " + released);
-
-        // Displaying the release year
-        movieDiv.append(pTwo);
-
-        // Storing the plot
-        var plot = response.Plot;
-
-        // Creating an element to hold the plot
-        var pThree = $("<p>").text("Plot: " + plot);
-
-        // Appending the plot
-        movieDiv.append(pThree);
-
+        // Display the plot info
+        $('#movieTxt').text(plot);
 
         // Retrieving the URL for the image
-        var imgURL = response.Poster;
+        let imgURL = response.Poster;
 
-        // Creating an element to hold the image
-        var image = $("<img>").attr("src", imgURL);
-
-        // Appending the image
-        movieDiv.append(image);
-
-        // Putting the entire movie above the previous movies
-        $("#movies-view").prepend(movieDiv);
-
-
+        // Hold the image
+        $("#moviePoster").attr("src", imgURL);
       });
 
       // Random index returned from matched restaurant ratings within the loop below
