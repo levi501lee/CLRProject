@@ -293,24 +293,40 @@ function modalClickEvent(e, modalRef) {
 
       // Random index returned from matched restaurant ratings within the loop below
       let indexArr = Array.from({ length: response.businesses.length }, () => Math.floor(Math.random() * 20) + 1);
-
+      // Temp array to hold top 3 possible choices for restaurants
+      let possibleYelpsArr = [];
+      console.log(response);
       // Loop through the 20 restaurants returned from the API to find the match
       for (let i = 0; i < response.businesses.length; i++) {
 
+        // We just needed the rating to test
         let yelpRating = response.businesses[i].rating;
-        let yelpEstablishment = response.businesses[i].name;
-        let yelpUrl = response.businesses[i].url;
-        let yelpImage = response.businesses[i].image_url;
-        let yelpPhone = response.businesses[i].phone;
-        let yelpStreet = response.businesses[i].location.address1;
-        let yelpCity = response.businesses[i].location.city;
-        let yelpState = response.businesses[i].location.state;
-        let yelpZip = response.businesses[i].location.zip_code;
 
         // See if current restaurant's rating matches the movie's rating
-        if (movieRating() === yelpRating) {
+        if (movieRating(rating) === yelpRating) {
 
+          // Push another candidate onto the temp array
+          possibleYelpsArr.push(response.businesses[i]);
 
+          if (possibleYelpsArr.length === 3) {
+
+            let yelpEstablishment = response.businesses[indexArr].name;
+            let yelpUrl = response.businesses[indexArr].url;
+            let yelpImage = response.businesses[indexArr].image_url;
+            let yelpPhone = response.businesses[indexArr].phone;
+            let yelpStreet = response.businesses[indexArr].location.address1;
+            let yelpCity = response.businesses[indexArr].location.city;
+            let yelpState = response.businesses[indexArr].location.state;
+            let yelpZip = response.businesses[indexArr].location.zip_code;
+
+            $('#foodPoster').attr('src', yelpImage);
+            $('#foodName').text(yelpEstablishment);
+            $('#foodAddress').text(yelpStreet);
+            $('#foodCity').text(yelpCity);
+            $('#foodState').text(yelpState);
+            $('#foodZip').text(yelpZip);
+            $('#foodPhone').text(yelpPhone);
+          }
         }
       }
     });
